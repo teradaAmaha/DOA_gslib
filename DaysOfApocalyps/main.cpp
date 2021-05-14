@@ -1,4 +1,5 @@
 #include <GSgame.h>
+<<<<<<< HEAD
 #include "SceneManager.h"
 #include "TitleScene.h"
 #include "GamePlayScene.h"
@@ -37,3 +38,13 @@ class MyGame : public gslib::Game {
 int main() {
     return MyGame().run();
 }
+=======
+
+class MyGame : public gslib::Game {
+
+};
+
+int main() {
+	return MyGame().run();
+}
+>>>>>>> f59b5c3d60bddca32cde8e3e5ab799981391b42f
