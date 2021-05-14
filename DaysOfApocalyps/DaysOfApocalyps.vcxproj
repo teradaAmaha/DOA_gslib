@@ -143,6 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <ClCompile Include="ActorManager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActorManager.h" />
+    <ClInclude Include="World.h" />
+=======
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="BoundingRectangle.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,6 +161,7 @@
     <ClInclude Include="BoundingRectangle.h" />
     <ClInclude Include="Iworld.h" />
     <ClInclude Include="TextureID.h" />
+>>>>>>> f59b5c3d60bddca32cde8e3e5ab799981391b42f
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
