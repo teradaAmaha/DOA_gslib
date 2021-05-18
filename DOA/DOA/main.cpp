@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "TextureID.h"
+#include "Base.h"
 
 // ゲームクラス
 class MyGame : public gslib::Game {
@@ -10,6 +11,18 @@ class MyGame : public gslib::Game {
     World world_;
     // 開始
     void start() override {
+        // テクスチャの読み込み
+        gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
+        gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
+        // プレーヤーを追加
+        world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 440.0f } });
+        // 敵を3体追加
+        world_.add_actor(new Enemy{ &world_, GSvector2{ 240.0f, 0.0f } });
+        world_.add_actor(new Enemy{ &world_, GSvector2{ 360.0f, 0.0f } });
+        world_.add_actor(new Enemy{ &world_, GSvector2{ 610.0f, 0.0f } });
+        world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
+
+        //画面大きさ（620, 460?）
     }
     // 更新
     void update(float delta_time) override {
@@ -35,4 +48,3 @@ class MyGame : public gslib::Game {
 int main() {
     return MyGame().run();
 }
-
