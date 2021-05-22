@@ -14,8 +14,9 @@ class MyGame : public gslib::Game {
         // テクスチャの読み込み
         gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
         gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
+        gsLoadTexture(TextureBase, "Assets/base.png");
         // プレーヤーを追加
-        world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 440.0f } });
+        world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
         // 敵を3体追加
         world_.add_actor(new Enemy{ &world_, GSvector2{ 240.0f, 0.0f } });
         world_.add_actor(new Enemy{ &world_, GSvector2{ 360.0f, 0.0f } });
