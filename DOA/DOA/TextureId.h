@@ -4,7 +4,8 @@
 // テクスチャID
 enum {
     TexturePlayer, // プレーヤーのテクスチャID
-    TextureEnemy   // 敵のテクスチャID
+    TextureEnemy,   // 敵のテクスチャID
+    TextureItem //アイテム
 };
 
 #endif
