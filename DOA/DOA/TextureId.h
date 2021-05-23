@@ -5,7 +5,7 @@
 enum {
     TexturePlayer, // プレーヤーのテクスチャID
     TextureEnemy,   // 敵のテクスチャID
-
+    TextureItem,
     TexturePlayerBeam,  // プレーヤーの弾
     TextureEnemyBeam,    // 敵の弾
     TextureEnemy2,
