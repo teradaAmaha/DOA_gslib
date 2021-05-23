@@ -153,6 +153,7 @@
     <ClCompile Include="Enemy4.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerBeam.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +167,7 @@
     <ClInclude Include="Enemy4.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerBeam.h" />
     <ClInclude Include="TextureId.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
