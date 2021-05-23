@@ -17,31 +17,24 @@ class MyGame : public gslib::Game {
         // テクスチャの読み込み
         gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
         gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
-<<<<<<< HEAD
         gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
         gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
 
-=======
+
         gsLoadTexture(TextureBase, "Assets/base.png");
         gsLoadTexture(TextureEnemy2, "Assets/ENEMY2.png");
         gsLoadTexture(TextureEnemy3, "Assets/ENEMY3.png");
         gsLoadTexture(TextureEnemy4, "Assets/ENEMY4.png");
         gsLoadTexture(TextureBoss, "Assets/BOSS.png");
->>>>>>> 67ee0600efc2f2ef1b30d4a566cde17fc622dd4d
         // プレーヤーを追加
         world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
         // 敵を3体追加
-<<<<<<< HEAD
-        world_.add_actor(new Enemy{ &world_, GSvector2{ 240.0f, 0.0f } });
-        world_.add_actor(new Enemy{ &world_, GSvector2{ 360.0f, 0.0f } });
-        world_.add_actor(new Enemy{ &world_, GSvector2{ 610.0f, 0.0f } });
-    /*    world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });*/
-=======
+
         world_.add_actor(new Enemy1{ &world_, GSvector2{ 240.0f, 0.0f } });
         world_.add_actor(new Enemy2{ &world_, GSvector2{ 360.0f, 0.0f } });
         world_.add_actor(new Enemy3{ &world_, GSvector2{ 610.0f, 0.0f } });
         world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
->>>>>>> 67ee0600efc2f2ef1b30d4a566cde17fc622dd4d
+
 
         //画面大きさ（620, 460?）
     }
