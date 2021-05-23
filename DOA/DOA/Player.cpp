@@ -1,4 +1,6 @@
 #include "Player.h"
+#include "IWorld.h"
+#include "PlayerBeam.h"
 #include "TextureID.h"  // テクスチャIDのために必要
 
 // コンストラクタ
@@ -31,6 +33,12 @@ void Player::update(float delta_time) {
     velocity_ = direction.normalized() * speed;
     // 座標の更新
     position_ += velocity_ * delta_time;
+
+    // スペースキーを押したら弾を発射
+    if (gsGetKeyTrigger(GKEY_SPACE)) {
+        world_->add_actor(new PlayerBeam{ world_,
+            position_ + GSvector2{ 50.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });
+    }
 }
 
 //// 衝突リアクション
