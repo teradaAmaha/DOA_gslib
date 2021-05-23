@@ -153,8 +153,13 @@
     <ClCompile Include="BoundingRectangle.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Enemy1.cpp" />
+    <ClCompile Include="Enemy2.cpp" />
+    <ClCompile Include="Enemy3.cpp" />
+    <ClCompile Include="Enemy4.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerBeam.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,8 +169,13 @@
     <ClInclude Include="BoundingRectangle.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Enemy1.h" />
+    <ClInclude Include="Enemy2.h" />
+    <ClInclude Include="Enemy3.h" />
+    <ClInclude Include="Enemy4.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerBeam.h" />
     <ClInclude Include="TextureId.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
