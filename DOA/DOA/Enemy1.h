@@ -1,15 +1,17 @@
-#ifndef ENEMY_H_
-#define ENEMY_H_
+#ifndef ENEMY_1_H_
+#define ENEMY_1_H_
 
 #include "Actor.h"
 
 // 敵クラス
-class Enemy : public Actor {
+class Enemy1 : public Actor {
 public:
     // コンストラクタ
-    Enemy(IWorld* world, const GSvector2& position);
+    Enemy1(IWorld* world, const GSvector2& position);
     // 更新
     virtual void update(float delta_time) override;
+
+    virtual void draw();
     // 衝突リアクション
     virtual void react(Actor& other) override;
 };
