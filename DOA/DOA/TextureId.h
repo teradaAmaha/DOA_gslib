@@ -5,6 +5,10 @@
 enum {
     TexturePlayer, // プレーヤーのテクスチャID
     TextureEnemy,   // 敵のテクスチャID
+    TextureEnemy2,
+    TextureEnemy3,
+    TextureEnemy4,
+    TextureBoss,
     TextureBase
 };
 
