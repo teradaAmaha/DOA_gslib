@@ -24,7 +24,7 @@ void PlayerBeam::update(float delta_time) {
 
 // Õ“ËƒŠƒAƒNƒVƒ‡ƒ“
 void PlayerBeam::react(Actor& other) {
-    if (other.tag() == "EnemyTag") {
+    if (other.tag() == "Enemy1Tag") {
         die();
     }
 }

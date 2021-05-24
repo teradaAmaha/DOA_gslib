@@ -20,4 +20,10 @@ void Enemy2::react(Actor& other) {
 	if (other.tag() == "EnemyTag2") {
 		die();
 	}
+
+	if (other.tag() == "PlayerBulletTag") {
+
+		die();
+
+	}
 }

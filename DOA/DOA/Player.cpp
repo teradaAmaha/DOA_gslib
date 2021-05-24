@@ -34,18 +34,26 @@ void Player::update(float delta_time) {
     // 座標の更新
     position_ += velocity_ * delta_time;
 
-    // スペースキーを押したら弾を発射
-    if (gsGetKeyTrigger(GKEY_SPACE)) {
-        world_->add_actor(new PlayerBeam{ world_,
-            position_ + GSvector2{ 50.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });
+   
+
+
+
+    // スペースキーを押したら弾を発射 生成してる
+    if (gsGetKeyState(GKEY_SPACE)) {
+        if (counter % 10 == 0) {
+            world_->add_actor(new PlayerBeam{ world_,
+                position_ + GSvector2{ 50.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });//playerBeamのコンストラクタ呼んでる
+        }
     }
+
+    counter++;
 }
 
-//// 衝突リアクション
-//void Player::react(Actor& other) {
-//    // 敵のタグを持つキャラクタと衝突したか？
-//    if (other.tag() == "EnemyTag") {
-//        // 死亡状態にする
-//        die();
-//    }
+ /*衝突リアクション
+void Player::react(Actor& other) {
+     敵のタグを持つキャラクタと衝突したか？
+    if (other.tag() == "Enemy1Tag") {
+         死亡状態にする
+        die();
+    }*/
 //}

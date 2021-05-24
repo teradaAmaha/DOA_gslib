@@ -7,6 +7,7 @@
 #include "Enemy4.h"
 #include "TextureID.h"
 #include "Base.h"
+#include "EnemyGenerator.h"
 
 // ƒQ[ƒ€ƒNƒ‰ƒX
 class MyGame : public gslib::Game {
@@ -30,7 +31,8 @@ class MyGame : public gslib::Game {
         world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
         // “G‚ğ3‘Ì’Ç‰Á
 
-        world_.add_actor(new Enemy1{ &world_, GSvector2{ 240.0f, 0.0f } });
+        world_.add_actor(new EnemyGenerator{ &world_ });
+
         world_.add_actor(new Enemy2{ &world_, GSvector2{ 360.0f, 0.0f } });
         world_.add_actor(new Enemy3{ &world_, GSvector2{ 610.0f, 0.0f } });
         world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });

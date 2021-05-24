@@ -12,6 +12,8 @@ public:
     virtual void update(float delta_time) override;
     // Õ“ËƒŠƒAƒNƒVƒ‡ƒ“
     //virtual void react(Actor& other) override;
+private:
+    int counter = 0;
 };
 
 #endif

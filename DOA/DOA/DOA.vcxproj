@@ -151,6 +151,7 @@
     <ClCompile Include="ActorManager.cpp" />
     <ClCompile Include="Base.cpp" />
     <ClCompile Include="BoundingRectangle.cpp" />
+    <ClCompile Include="EnemyGenerator.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Enemy2.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Base.h" />
     <ClInclude Include="BoundingRectangle.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyGenerator.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Enemy2.h" />
