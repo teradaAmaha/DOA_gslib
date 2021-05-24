@@ -14,6 +14,11 @@ public:
     virtual void draw();
     // 衝突リアクション
     virtual void react(Actor& other) override;
+
+private:
+    // 弾発射タイマ
+    float timer_{ 0.0f };
+
 };
 
 #endif
