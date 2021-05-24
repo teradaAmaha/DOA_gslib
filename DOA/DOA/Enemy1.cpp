@@ -1,4 +1,6 @@
 #include "Enemy1.h"
+#include "IWorld.h"
+#include "EnemyBeam.h"
 #include "TextureID.h"
 
 // コンストラクタ
@@ -16,6 +18,25 @@ Enemy1::Enemy1(IWorld* world, const GSvector2& position) {
 // 更新
 void Enemy1::update(float delta_time) {
     position_ += velocity_ * delta_time;
+
+    timer_ += delta_time;
+    // 120フレーム経過したか？
+    if (timer_ > 120.0f) {
+        // プレーヤを検索する
+        Actor* player = world_->find_actor("Player");
+        if (player != nullptr) {
+            // プレーヤーに向かうベクトルを計算する
+            GSvector2 velocity = (player->position() - position_).normalized() * 4.0f;
+            // 敵の弾クラスを生成して、ワールドに追加する
+            world_->add_actor(new EnemyBeam{ world_, position_, velocity });
+        }
+        timer_ = 0.0f;
+    }
+    //// 拡張エリア外なら死亡
+    //if (world_->field().is_outside(collider())) {
+    //    die();
+    //}
+
 }
 
 void Enemy1::draw() {
