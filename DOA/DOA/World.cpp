@@ -12,9 +12,36 @@ void World::draw() const {
     actors_.draw();
 }
 
+// ゲームオーバー
+void World::game_over() {
+    is_game_over_ = true;
+}
+
+// ゲームクリアー
+void World::game_clear() {
+    is_game_clear_ = true;
+}
+
+// ゲームオーバーか？
+bool World::is_game_over() const {
+    return is_game_over_;
+}
+
+// ゲームクリアか？
+bool World::is_game_clear() const {
+    return is_game_clear_;
+}
+
+
+
 // 消去
 void World::clear() {
     actors_.clear();
+    // ゲームオーバーフラグの初期化
+    is_game_over_ = false;
+    // ゲームクリアフラグの初期化
+    is_game_clear_ = false;
+
 }
 
 // アクターの追加（ワールド抽象インターフェースの実装）
