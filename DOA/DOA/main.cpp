@@ -14,6 +14,8 @@
 #include "GamePlayScene.h"
 
 
+
+
 // ゲームクラス
 class MyGame : public gslib::Game {
 
@@ -44,6 +46,7 @@ class MyGame : public gslib::Game {
         gsLoadTexture(TextureEnemy4, "Assets/ENEMY4.png");
         gsLoadTexture(TextureBoss, "Assets/BOSS.png");
         gsLoadTexture(TextureItem, "Assets/ITEM.png");
+
         // プレーヤーを追加
         world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
         // 敵を3体追加
@@ -54,6 +57,7 @@ class MyGame : public gslib::Game {
         world_.add_actor(new Enemy3{ &world_, GSvector2{ 610.0f, 0.0f } });
         world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
         world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+
 
 
         //画面大きさ（620, 460?）
