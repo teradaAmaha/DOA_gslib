@@ -22,16 +22,14 @@ void Enemy1::update(float delta_time) {
     timer_ += delta_time;
     // 120フレーム経過したか？
     if (timer_ > 60.0f) {
-        // プレーヤを検索する
-        Actor* player = world_->find_actor("Player");
-        if (player != nullptr) {
-            // プレーヤーに向かうベクトルを計算する
-            GSvector2 velocity = (player->position() - position_).normalized() * 10.0f;
-            // 敵の弾クラスを生成して、ワールドに追加する
-            world_->add_actor(new EnemyBeam{ world_, position_, velocity });
+        if (counter % 10 == 0) {
+            world_->add_actor(new EnemyBeam{ world_,
+                position_ + GSvector2{ 10.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });
+            timer_ = 0.0f;
         }
-        timer_ = 0.0f;
     }
+
+    counter++;
     //// 拡張エリア外なら死亡
     //if (world_->field().is_outside(collider())) {
     //    die();
