@@ -47,6 +47,8 @@ void Base::react(Actor& other)
 	if (other.tag() == "Enemy4Tag") {
 		alive();
 	}
-	
+	if (other.tag() == "EnemyBulletTag") {
+		alive();
+	}
 }
 

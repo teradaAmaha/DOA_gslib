@@ -28,5 +28,10 @@ void EnemyBeam::react(Actor& other) {
     if (other.tag() == "PlayerTag") {
         die();
     }
+    if (other.tag() == "BaseTag") {
+
+        die();
+
+    }
 }
 
