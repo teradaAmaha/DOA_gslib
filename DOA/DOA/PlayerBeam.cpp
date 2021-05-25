@@ -16,7 +16,7 @@ PlayerBeam::PlayerBeam(IWorld* world, const GSvector2& position, const GSvector2
 
 // 更新
 void PlayerBeam::update(float delta_time) {
-    position_ -= velocity_ * delta_time;
+    position_ -= velocity_ * delta_time * 1.5;
     //if (world_->field().is_outside(collider())) {   // 拡張エリアの外側か？
     //    die(); // 拡張エリアの外側に出たら死亡する
     //}
