@@ -10,6 +10,7 @@ void World::update(float delta_time) {
 
 // •`‰æ
 void World::draw() const {
+    
     actors_.draw();
 }
 

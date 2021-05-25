@@ -3,6 +3,7 @@
 
 #include "IWorld.h"
 #include "ActorManager.h"
+#include"Field.h"
 
 
 // ワールドクラス
@@ -20,6 +21,8 @@ public:
     virtual void add_actor(Actor* actor) override;
     // アクターの検索（ワールド抽象インターフェースの実装）
     virtual Actor* find_actor(const std::string& name) const override;
+    //フィールドの取得
+    virtual Field& field()override;
     // ゲームオーバー
     virtual void game_over() override;
     // ゲームクリア
@@ -37,6 +40,8 @@ public:
 private:
     // アクターマネージャー
     ActorManager actors_;
+    //フィールド
+    Field field_;
 
     // ゲームオーバーか？
     bool            is_game_over_{ false };

@@ -4,6 +4,7 @@
 #include <string>
 
 class Actor; // アクタークラスの前方宣言
+class Field;
 
 // ワールド抽象インターフェース
 class IWorld {
@@ -18,6 +19,8 @@ public:
     virtual void game_over() = 0;
     // ゲームクリア
     virtual void game_clear() = 0;
+    //フィールドの取得
+    virtual Field& field() = 0;
 
 };
 
