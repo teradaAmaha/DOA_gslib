@@ -23,4 +23,9 @@ void Enemy3::react(Actor& other) {
 		die();
 
 	}
+	if (other.tag() == "PlayerBulletTag") {
+
+		die();
+
+	}
 }

@@ -52,6 +52,12 @@ void Enemy1::react(Actor& other) {
 
     }
 
+    if (other.tag() == "PlayerBulletTag") {
+
+        die();
+
+    }
+
 
 }
 

@@ -4,6 +4,7 @@
 #include "IWorld.h"
 #include "ActorManager.h"
 
+
 // ワールドクラス
 class World : public IWorld {
 public:
