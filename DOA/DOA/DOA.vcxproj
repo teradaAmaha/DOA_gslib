@@ -153,6 +153,7 @@
     <ClCompile Include="BoundingRectangle.cpp" />
     <ClCompile Include="EnemyGenerator.cpp" />
     <ClCompile Include="EnemyBeam.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Enemy2.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyGenerator.h" />
     <ClInclude Include="EnemyBeam.h" />
+    <ClInclude Include="Field.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Enemy2.h" />

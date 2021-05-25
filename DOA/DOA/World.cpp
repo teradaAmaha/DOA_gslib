@@ -2,6 +2,7 @@
 
 // 更新
 void World::update(float delta_time) {
+    field_.update(delta_time);    // フィールドの更新
     actors_.update(delta_time);	// 更新
     actors_.collide();		// 衝突判定
     actors_.remove();		// 死亡しているアクターの削除
@@ -15,6 +16,11 @@ void World::draw() const {
 // 消去
 void World::clear() {
     actors_.clear();
+}
+
+// フィールドの取得
+Field& World::field() {
+    return field_;
 }
 
 // アクターの追加（ワールド抽象インターフェースの実装）

@@ -1,0 +1,9 @@
+diff a/DOA/DOA/PlayerBeam.cpp b/DOA/DOA/PlayerBeam.cpp	(rejected hunks)
+@@ -17,6 +17,7 @@
+ 
+ // �X�V
+ void PlayerBeam::update(float delta_time) {
++<<<<<<< HEAD
+     position_ -= velocity_ * delta_time * 1.5;
+     //if (world_->field().is_outside(collider())) {   // �g���G���A�̊O�����H
+     //    die(); // �g���G���A�̊O���ɏo���玀�S����

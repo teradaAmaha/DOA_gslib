@@ -4,6 +4,7 @@
 #include <string>
 
 class Actor; // アクタークラスの前方宣言
+class Field;
 
 // ワールド抽象インターフェース
 class IWorld {
@@ -14,6 +15,8 @@ public:
     virtual void add_actor(Actor* actor) = 0;
     // アクターの検索
     virtual Actor* find_actor(const std::string& name) const = 0;
+    // フィールドの取得
+    virtual Field& field() = 0;
 };
 
 #endif

@@ -3,6 +3,7 @@
 
 #include "IWorld.h"
 #include "ActorManager.h"
+#include "Field.h"
 
 
 // ワールドクラス
@@ -20,12 +21,16 @@ public:
     virtual void add_actor(Actor* actor) override;
     // アクターの検索（ワールド抽象インターフェースの実装）
     virtual Actor* find_actor(const std::string& name) const override;
+    // フィールドを取得
+    virtual Field& field() override;
     // コピー禁止
     World(const World& other) = delete;
     World& operator = (const World& other) = delete;
 private:
     // アクターマネージャー
     ActorManager actors_;
+    // フィールド
+    Field field_;
 };
 
 #endif
