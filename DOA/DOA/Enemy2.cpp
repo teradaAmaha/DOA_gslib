@@ -17,7 +17,7 @@ void Enemy2::update(float delta_time) {
 
 void Enemy2::react(Actor& other) {
 
-	if (other.tag() == "EnemyTag2") {
+	if (other.tag() == "BaseTag") {
 		die();
 	}
 
