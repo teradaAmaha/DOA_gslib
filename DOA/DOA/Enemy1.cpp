@@ -21,12 +21,12 @@ void Enemy1::update(float delta_time) {
 
     timer_ += delta_time;
     // 120フレーム経過したか？
-    if (timer_ > 120.0f) {
+    if (timer_ > 60.0f) {
         // プレーヤを検索する
         Actor* player = world_->find_actor("Player");
         if (player != nullptr) {
             // プレーヤーに向かうベクトルを計算する
-            GSvector2 velocity = (player->position() - position_).normalized() * 4.0f;
+            GSvector2 velocity = (player->position() - position_).normalized() * 10.0f;
             // 敵の弾クラスを生成して、ワールドに追加する
             world_->add_actor(new EnemyBeam{ world_, position_, velocity });
         }
