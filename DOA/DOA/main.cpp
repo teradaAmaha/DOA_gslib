@@ -32,9 +32,6 @@ class MyGame : public gslib::Game {
         // “G‚ð3‘Ì’Ç‰Á
 
         world_.add_actor(new EnemyGenerator{ &world_ });
-
-        world_.add_actor(new Enemy2{ &world_, GSvector2{ 360.0f, 0.0f } });
-        world_.add_actor(new Enemy3{ &world_, GSvector2{ 610.0f, 0.0f } });
         world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
 
 
