@@ -151,7 +151,8 @@
     <ClCompile Include="ActorManager.cpp" />
     <ClCompile Include="Base.cpp" />
     <ClCompile Include="BoundingRectangle.cpp" />
-    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyGenerator.cpp" />
+    <ClCompile Include="EnemyBeam.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Enemy2.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBeam.cpp" />
+    <ClCompile Include="PlayerBeam1.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,8 @@
     <ClInclude Include="Base.h" />
     <ClInclude Include="BoundingRectangle.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyGenerator.h" />
+    <ClInclude Include="EnemyBeam.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Enemy2.h" />
@@ -176,6 +180,7 @@
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBeam.h" />
+    <ClInclude Include="PlayerBeam1.h" />
     <ClInclude Include="TextureId.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
