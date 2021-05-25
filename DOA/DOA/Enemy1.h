@@ -18,6 +18,7 @@ public:
 private:
     // ’e”­Ëƒ^ƒCƒ}
     float timer_{ 0.0f };
+    int counter = 0;
 
 };
 

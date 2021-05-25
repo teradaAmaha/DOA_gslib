@@ -2,6 +2,7 @@
 #include "IWorld.h"
 #include "PlayerBeam.h"
 #include "TextureID.h"  // テクスチャIDのために必要
+#include <algorithm>
 
 // コンストラクタ
 Player::Player(IWorld* world, const GSvector2& position) {
@@ -11,6 +12,16 @@ Player::Player(IWorld* world, const GSvector2& position) {
     position_ = position;
     collider_ = BoundingRectangle{ 0.0f, 0.0f, 64.0f, 40.0f };
     texture_ = TexturePlayer;
+}
+
+const GSvector2& Player::minX() const{
+
+    return min_x_;
+}
+
+const GSvector2& Player::maxX() const {
+
+    return max_x_;
 }
 
 // 更新
@@ -35,12 +46,12 @@ void Player::update(float delta_time) {
     position_ += velocity_ * delta_time;
 
    
-
+    position_ = position_.clamp(minX(), maxX());
 
 
     // スペースキーを押したら弾を発射 生成してる
     if (gsGetKeyState(GKEY_SPACE)) {
-        if (counter % 10 == 0) {
+        if (counter % 5 == 0) {
             world_->add_actor(new PlayerBeam{ world_,
                 position_ + GSvector2{ 50.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });//playerBeamのコンストラクタ呼んでる
         }

@@ -20,6 +20,7 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="GamePlayScene.cpp" />
+    <ClCompile Include="Field.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -45,5 +46,6 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="GamePlayScene.h" />
+    <ClInclude Include="Field.h" />
   </ItemGroup>
 </Project>

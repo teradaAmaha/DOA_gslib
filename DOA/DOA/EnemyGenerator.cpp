@@ -57,10 +57,11 @@ void EnemyGenerator::update(float delta_time) {
 		world_->add_actor(new Enemy4{ world_, position });
 		timer_4_ = gsRandf(30.0f, 120.0f);
 	}
+	//ê∂ê¨ë¨ìx
 	timer_1_ -= delta_time;
-	timer_2_ -= delta_time;
-	timer_3_ -= delta_time;
-	timer_4_ -= delta_time;
+	timer_2_ -= delta_time*0.2;
+	timer_3_ -= delta_time*0.2;
+	timer_4_ -= delta_time*0.2;
 
 }
 //ï`âÊâΩÇ‡ï\é¶Ç≥ÇπÇ»Ç¢
