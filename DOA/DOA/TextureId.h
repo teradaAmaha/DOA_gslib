@@ -12,7 +12,10 @@ enum {
     TextureEnemy3,
     TextureEnemy4,
     TextureBoss,
-    TextureBase
+    TextureBase,
+    TextureTitleLogo,//タイトルロゴ
+    TextureTitleStart,//タイトル操作&開始
+    
 
 };
 

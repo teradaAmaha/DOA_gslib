@@ -17,6 +17,9 @@
     <ClCompile Include="PlayerBeam.cpp" />
     <ClCompile Include="PlayerBeam1.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="GamePlayScene.cpp" />
     <ClCompile Include="Field.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +41,11 @@
     <ClInclude Include="PlayerBeam1.h" />
     <ClInclude Include="TextureId.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="ISeen.h" />
+    <ClInclude Include="SceneNull.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="GamePlayScene.h" />
     <ClInclude Include="Field.h" />
   </ItemGroup>
 </Project>
