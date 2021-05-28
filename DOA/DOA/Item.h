@@ -15,7 +15,7 @@ public:
     virtual void react(Actor& other) override;
 
 private:
-    //消失タイマー
+    // 弾発射タイマ
     float timer_{ 0.0f };
 
 

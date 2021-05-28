@@ -15,11 +15,7 @@ public:
     virtual void add_actor(Actor* actor) = 0;
     // アクターの検索
     virtual Actor* find_actor(const std::string& name) const = 0;
-    // ゲームオーバー
-    virtual void game_over() = 0;
-    // ゲームクリア
-    virtual void game_clear() = 0;
-    //フィールドの取得
+    // フィールドの取得
     virtual Field& field() = 0;
     // スコアの加算
     virtual void add_score(int score) = 0;

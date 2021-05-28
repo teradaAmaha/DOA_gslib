@@ -6,7 +6,6 @@ void Actor::update(float delta_time) {}
 // 描画
 void Actor::draw() const {
     // スプライトの表示
-    
     gsDrawSprite2D(texture_, &position_, NULL, NULL, NULL, NULL, angle_);
 }
 

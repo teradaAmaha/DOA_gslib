@@ -1,0 +1,9 @@
+diff a/DOA/DOA/World.cpp b/DOA/DOA/World.cpp	(rejected hunks)
+@@ -48,6 +48,7 @@
+ }
+ =======
+ 
++>>>>>>> 344253c78ed0b3b4be5576c753cf36b830531466
+ // �X�R�A�̉��Z
+ void World::add_score(int score) {
+     score_.add(score);

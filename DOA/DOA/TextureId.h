@@ -13,10 +13,10 @@ enum {
     TextureEnemy4,
     TextureBoss,
     TextureBase,
+
     TextureTitleLogo,//タイトルロゴ
     TextureTitleStart,//タイトル操作&開始
     TextureNumber,//数字フォント
-    
 
 };
 

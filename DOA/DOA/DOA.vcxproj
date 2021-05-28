@@ -153,7 +153,6 @@
     <ClCompile Include="BoundingRectangle.cpp" />
     <ClCompile Include="EnemyGenerator.cpp" />
     <ClCompile Include="EnemyBeam.cpp" />
-    <ClCompile Include="GamePlayScene.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Enemy1.cpp" />
@@ -168,6 +167,7 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,8 +178,6 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyGenerator.h" />
     <ClInclude Include="EnemyBeam.h" />
-    <ClInclude Include="GamePlayScene.h" />
-    <ClInclude Include="ISeen.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Enemy1.h" />
@@ -195,7 +193,6 @@
     <ClInclude Include="SceneNull.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="TextureId.h" />
-    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
