@@ -12,6 +12,8 @@ void World::update(float delta_time) {
 void World::draw() const {
     
     actors_.draw();
+    // スコアの描画
+    score_.draw();
 }
 
 // ゲームオーバー
@@ -43,6 +45,8 @@ void World::clear() {
     is_game_over_ = false;
     // ゲームクリアフラグの初期化
     is_game_clear_ = false;
+    // スコアの消去
+    score_.clear();
 
 }
 
@@ -59,4 +63,8 @@ void World::add_actor(Actor* actor) {
 // アクターの検索（ワールド抽象インターフェースの実装）
 Actor* World::find_actor(const std::string& name) const {
     return actors_.find(name);
+}
+// スコアの加算
+void World::add_score(int score) {
+    score_.add(score);
 }

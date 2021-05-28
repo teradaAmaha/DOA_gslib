@@ -161,10 +161,12 @@
     <ClCompile Include="Enemy3.cpp" />
     <ClCompile Include="Enemy4.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NumberTexture.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBeam.cpp" />
     <ClCompile Include="PlayerBeam1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -185,11 +187,13 @@
     <ClInclude Include="Enemy3.h" />
     <ClInclude Include="Enemy4.h" />
     <ClInclude Include="IWorld.h" />
+    <ClInclude Include="NumberTexture.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBeam.h" />
     <ClInclude Include="PlayerBeam1.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneNull.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="TextureId.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="World.h" />

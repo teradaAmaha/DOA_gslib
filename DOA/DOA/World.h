@@ -4,7 +4,7 @@
 #include "IWorld.h"
 #include "ActorManager.h"
 #include"Field.h"
-
+#include"Score.h"
 
 // ワールドクラス
 class World : public IWorld {
@@ -23,6 +23,9 @@ public:
     virtual Actor* find_actor(const std::string& name) const override;
     //フィールドの取得
     virtual Field& field()override;
+    // スコアの加算
+    virtual void add_score(int score) override;
+
     // ゲームオーバー
     virtual void game_over() override;
     // ゲームクリア
@@ -42,6 +45,9 @@ private:
     ActorManager actors_;
     //フィールド
     Field field_;
+    // スコア
+    Score		score_;
+
 
     // ゲームオーバーか？
     bool            is_game_over_{ false };
