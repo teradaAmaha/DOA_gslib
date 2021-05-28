@@ -4,6 +4,8 @@
 #include "IWorld.h"
 #include "ActorManager.h"
 #include "Field.h"
+#include "Score.h"
+
 
 
 // ワールドクラス
@@ -23,6 +25,8 @@ public:
     virtual Actor* find_actor(const std::string& name) const override;
     // フィールドを取得
     virtual Field& field() override;
+    // スコアの加算
+    virtual void add_score(int score) override;
     // コピー禁止
     World(const World& other) = delete;
     World& operator = (const World& other) = delete;
@@ -31,6 +35,8 @@ private:
     ActorManager actors_;
     // フィールド
     Field field_;
+    // スコア
+    Score		score_;
 };
 
 #endif

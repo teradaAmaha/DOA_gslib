@@ -12,7 +12,8 @@ enum {
     TextureEnemy3,
     TextureEnemy4,
     TextureBoss,
-    TextureBase
+    TextureBase,
+    TextureNumber
 
 };
 

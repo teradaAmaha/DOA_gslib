@@ -17,6 +17,9 @@ public:
     virtual Actor* find_actor(const std::string& name) const = 0;
     // フィールドの取得
     virtual Field& field() = 0;
+    // スコアの加算
+    virtual void add_score(int score) = 0;
+
 };
 
 #endif

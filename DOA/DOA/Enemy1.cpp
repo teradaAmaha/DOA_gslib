@@ -47,15 +47,17 @@ void Enemy1::react(Actor& other) {
     if (other.tag() == "BaseTag") {
 
         die();
-
+       
     }
 
     if (other.tag() == "PlayerBulletTag") {
 
         die();
-
+        // Ž€–SŽž‚ÉƒXƒRƒA‚ð‰ÁŽZ‚·‚é
+        world_->add_score(100);
     }
 
+   
 
 }
 

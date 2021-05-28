@@ -27,6 +27,7 @@ class MyGame : public gslib::Game {
         gsLoadTexture(TextureEnemy3, "Assets/ENEMY3.png");
         gsLoadTexture(TextureEnemy4, "Assets/ENEMY4.png");
         gsLoadTexture(TextureBoss, "Assets/BOSS.png");
+        gsLoadTexture(TextureNumber, "Assets/NUM.png");
         // ƒvƒŒ[ƒ„[‚ğ’Ç‰Á
         world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
         // “G‚ğ3‘Ì’Ç‰Á

@@ -11,11 +11,15 @@ void World::update(float delta_time) {
 // 描画
 void World::draw() const {
     actors_.draw();
+    // スコアの描画
+    score_.draw();
 }
 
 // 消去
 void World::clear() {
     actors_.clear();
+    // スコアの消去
+    score_.clear();
 }
 
 // フィールドの取得
@@ -31,4 +35,9 @@ void World::add_actor(Actor* actor) {
 // アクターの検索（ワールド抽象インターフェースの実装）
 Actor* World::find_actor(const std::string& name) const {
     return actors_.find(name);
+}
+
+// スコアの加算
+void World::add_score(int score) {
+    score_.add(score);
 }
