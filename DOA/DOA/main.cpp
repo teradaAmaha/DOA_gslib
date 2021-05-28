@@ -19,8 +19,8 @@
 // ゲームクラス
 class MyGame : public gslib::Game {
 
-
-
+    //シーンマネージャー
+    //SceneManager scene_manager_;
     // ワールドクラス
     World world_;
     // 開始
@@ -62,14 +62,14 @@ class MyGame : public gslib::Game {
     // 更新
     void update(float delta_time) override {
         //// シーンの更新
-        //scene_manager_.update(delta_time);
+       // scene_manager_.update(delta_time);
 
         // 更新
         world_.update(delta_time);
     }
     // 描画
     void draw() override {
-        //// シーンの描画
+        // シーンの描画
         //scene_manager_.draw();
 
         // 描画
@@ -78,10 +78,10 @@ class MyGame : public gslib::Game {
     // 終了
     void end() override {
         //// シーンの終了
-        //scene_manager_.end();
+       // scene_manager_.end();
 
-        // 消去
-        world_.clear();
+        //// 消去
+        //world_.clear();
         // テクスチャの削除
         gsDeleteTexture(TexturePlayer);
         gsDeleteTexture(TextureEnemy);

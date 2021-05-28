@@ -4,7 +4,7 @@
 //コンストラクタ
 Item::Item(IWorld* world, const GSvector2& position)
 {
-	world = world;
+	world_ = world;
 	tag_ = "ItemTag";
 	name_ = "Item";
 	position_ = position;
@@ -14,15 +14,17 @@ Item::Item(IWorld* world, const GSvector2& position)
 }
 // 更新
 void Item::update(float delta_time) {
-    position_ += velocity_ * delta_time;
+   
 
     timer_ += delta_time;
     // 240フレーム経過したか？
     if (timer_ > 120.0f) {
         
             die();
+            timer_ = 0.0f;
         }
-        timer_ = 0.0f;
+
+        
     
 }
 

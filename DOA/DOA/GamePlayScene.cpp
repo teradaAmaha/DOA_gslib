@@ -1,6 +1,8 @@
 #include "GamePlayScene.h"
 #include "Player.h"
+#include "Base.h"
 #include "EnemyGenerator.h"
+#include "Item.h"
 #include "TextureID.h"
 
 
@@ -11,6 +13,8 @@ void GamePlayScene::start() {
     gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
     gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
     gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
+    gsLoadTexture(TextureItem, "Assets/ITEM.png");
+    gsLoadTexture(TextureBase, "Assets/base.png");
     /*gsLoadTexture(TextureBG1, "Assets/BG1.png");
     gsLoadTexture(TextureBG2, "Assets/BG2.png");
     gsLoadTexture(TextureBG3, "Assets/BG3.png");
@@ -18,6 +22,8 @@ void GamePlayScene::start() {
     gsLoadTexture(TextureNumber, "Assets/NUM.png")*/;
     world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
     world_.add_actor(new EnemyGenerator{ &world_ });
+    world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+    world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
 }
 
 // çXêV
@@ -58,6 +64,8 @@ void GamePlayScene::end() {
     gsDeleteTexture(TextureEnemy);
     gsDeleteTexture(TexturePlayerBeam);
     gsDeleteTexture(TextureEnemyBeam);
+    gsDeleteTexture(TextureBase);
+    gsDeleteTexture(TextureItem);
    /* gsDeleteTexture(TextureBG1);
     gsDeleteTexture(TextureBG2);
     gsDeleteTexture(TextureBG3);
