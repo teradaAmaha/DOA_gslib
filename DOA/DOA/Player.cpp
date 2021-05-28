@@ -51,7 +51,7 @@ void Player::update(float delta_time) {
 
     // スペースキーを押したら弾を発射 生成してる
     if (gsGetKeyState(GKEY_SPACE)) {
-        if (counter % 10 == 0) {
+        if (counter % 5 == 0) {
             world_->add_actor(new PlayerBeam{ world_,
                 position_ + GSvector2{ 50.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });//playerBeamのコンストラクタ呼んでる
         }

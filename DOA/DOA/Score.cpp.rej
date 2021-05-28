@@ -1,9 +1,0 @@
-diff a/DOA/DOA/Score.cpp b/DOA/DOA/Score.cpp	(rejected hunks)
-@@ -23,6 +23,7 @@
- // �X�R�A�̕`��
- void Score::draw() const {
-     static const NumberTexture number{ TextureNumber, 16, 16 };
-+<<<<<<< HEAD
-     number.draw(GSvector2{ 520, 0 }, score_, 7);
- =======
-     number.draw(GSvector2{ 0, 0 }, score_, 7);

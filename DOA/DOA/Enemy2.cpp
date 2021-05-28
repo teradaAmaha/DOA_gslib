@@ -1,5 +1,4 @@
 #include "Enemy2.h"
-#include "IWorld.h"
 #include "TextureId.h"
 
 Enemy2::Enemy2(IWorld* world, const GSvector2& position) {
@@ -25,7 +24,6 @@ void Enemy2::react(Actor& other) {
 	if (other.tag() == "PlayerBulletTag") {
 
 		die();
-	}
 
-	
+	}
 }

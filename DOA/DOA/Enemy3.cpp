@@ -1,5 +1,4 @@
 #include "Enemy3.h"
-#include "IWorld.h"
 #include "TextureId.h"
 
 Enemy3::Enemy3(IWorld* world, const GSvector2& position)
@@ -22,13 +21,11 @@ void Enemy3::react(Actor& other) {
 	if (other.tag() == "BaseTag") {
 
 		die();
-		
 
 	}
 	if (other.tag() == "PlayerBulletTag") {
 
 		die();
-		// Ž€–SŽž‚ÉƒXƒRƒA‚ð‰ÁŽZ‚·‚é
-		world_->add_score(100);
+
 	}
 }
