@@ -1,4 +1,5 @@
 #include "Enemy4.h"
+#include "IWorld.h"
 #include "TextureID.h"
 
 // コンストラクタ
@@ -29,6 +30,6 @@ void Enemy4::react(Actor& other) {
     if (other.tag() == "PlayerBulletTag") {
 
         die();
-
+        world_->add_score(100);
     }
 }
