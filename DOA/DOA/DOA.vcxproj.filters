@@ -23,6 +23,8 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="NumberTexture.cpp" />
     <ClCompile Include="Score.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="BaseLife.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -51,5 +53,7 @@
     <ClInclude Include="Field.h" />
     <ClInclude Include="NumberTexture.h" />
     <ClInclude Include="Score.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="BaseLife.h" />
   </ItemGroup>
 </Project>
