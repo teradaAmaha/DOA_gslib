@@ -4,7 +4,9 @@
 #include "IWorld.h"
 #include "ActorManager.h"
 #include"Field.h"
-#include"Score.h"
+#include "Score.h"
+#include "Timer.h"
+#include "BaseLife.h"
 
 // ワールドクラス
 class World : public IWorld {
@@ -25,6 +27,10 @@ public:
     virtual Field& field()override;
     // スコアの加算
     virtual void add_score(int score) override;
+    //タイムの減算
+    virtual void  sub_timer(int timer) override;
+    //hpの減算
+    virtual void sub_hp(int hp) override;
 
     // ゲームオーバー
     virtual void game_over() override;
@@ -47,7 +53,10 @@ private:
     Field field_;
     // スコア
     Score		score_;
+    //タイマー
+    Timer timer_;
 
+    BaseLife baselife;
 
     // ゲームオーバーか？
     bool            is_game_over_{ false };

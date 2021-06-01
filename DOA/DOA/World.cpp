@@ -14,6 +14,8 @@ void World::draw() const {
     actors_.draw();
     // スコアの描画
     score_.draw();
+    timer_.draw();
+    baselife.draw();
 }
 
 // ゲームオーバー
@@ -24,6 +26,8 @@ void World::game_over() {
 // ゲームクリアー
 void World::game_clear() {
     is_game_clear_ = true;
+    timer_.clear();
+    baselife.clear();
 }
 
 // ゲームオーバーか？
@@ -53,6 +57,15 @@ void World::clear() {
 // フィールドの取得
 Field& World::field() {
     return field_;
+}
+
+//タイマーの減算
+void World::sub_timer(int timer) {
+    timer_.sub(timer);
+}
+
+void World::sub_hp(int hp) {
+    baselife.sub(hp);
 }
 
 // アクターの追加（ワールド抽象インターフェースの実装）

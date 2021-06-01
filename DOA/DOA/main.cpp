@@ -39,7 +39,7 @@ class MyGame : public gslib::Game {
         gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
         gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
         gsLoadTexture(TextureNumber, "Assets/NUM.png");
-
+        gsLoadTexture(TextureCoron, "Assets/coron.png");
 
 
         gsLoadTexture(TextureBase, "Assets/base.png");
