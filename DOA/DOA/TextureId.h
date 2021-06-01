@@ -17,6 +17,9 @@ enum {
     TextureTitleStart,//タイトル操作&開始
     TextureNumber,//数字フォント
     TextureCoron,
+    TextureBG1,
+    TextureBG2,
+    TextureBG3
 
 };
 

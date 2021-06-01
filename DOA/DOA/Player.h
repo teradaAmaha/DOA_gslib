@@ -17,7 +17,7 @@ public:
     
 private:
     int counter = 0;
-    GSvector2 min_x_{ 0.0f,380.0f };
+    GSvector2 min_x_{ -20.0f,380.0f };
     GSvector2 max_x_{ 580.0f,380.0f };
     
 };

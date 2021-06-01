@@ -1,6 +1,7 @@
 #ifndef BASE_LIFE_H_
 #define BASE_LIFE_H_
 
+#include "Base.h"
 
 class BaseLife {
 public:

@@ -14,9 +14,13 @@ public:
 	virtual void react(Actor& other) override;
 
 	void alive(); //ƒ‰ƒCƒt‚ª‚O‚É‚È‚ê‚ÎŽ€‚Ê
+
+	void damageArray();
 private:
-	int life = 20;
+	int life = 100;
 	int counter = 0;
+
+	//float e1 = 3;
 };
 
 #endif

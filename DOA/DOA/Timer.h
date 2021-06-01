@@ -4,7 +4,7 @@
 class Timer {
 public:
 	//コンストラクタ
-	Timer(int timer = 6000);
+	Timer(int timer = 60000);
 	//タイマーの初期化
 	void initialize(int timer = 0);
 	//タイマーの減算
