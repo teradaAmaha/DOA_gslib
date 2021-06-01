@@ -53,7 +53,7 @@ void Enemy1::react(Actor& other) {
     if (other.tag() == "PlayerBulletTag") {
 
         die();
-
+        world_->add_score(100);
     }
 
 

@@ -1,6 +1,7 @@
 #include "Base.h"
 #include "TextureId.h"
 #include <iostream>
+#include "World.h"
 
 Base::Base(IWorld* world, const GSvector2& position) {
 	world_ = world;
@@ -23,6 +24,7 @@ void Base::draw() const {
 
 void Base::alive() {//ライフが０になれば死ぬ
 	--life;//仮ライフ
+	world_->sub_hp(1);
 	counter = -60;
 	if (life <= 0)
 	{
