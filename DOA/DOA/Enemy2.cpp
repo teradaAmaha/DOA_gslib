@@ -3,7 +3,7 @@
 #include "TextureId.h"
 
 Enemy2::Enemy2(IWorld* world, const GSvector2& position) {
-	world = world;
+	world_ = world;
 	tag_ = "Enemy2Tag";
 	name_ = "Enemy";
 	position_ = position;
