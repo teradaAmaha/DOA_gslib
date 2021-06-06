@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Base.h"
 #include "EnemyGenerator.h"
-#include "Item.h"
+#include"ItemGenerator.h"
 #include "TextureID.h"
 
 
@@ -46,14 +46,14 @@ void GamePlayScene::start() {
     //world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
 
 
-    world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+    world_.add_actor(new ItemGenerator{ &world_ });
     // ƒvƒŒ[ƒ„[‚ğ’Ç‰Á
     world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
-    // “G‚ğ3‘Ì’Ç‰Á
+    // “G‚ğ’Ç‰Á
 
     world_.add_actor(new EnemyGenerator{ &world_ });
     world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
-    world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+   // world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
 
 }
 

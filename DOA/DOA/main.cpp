@@ -5,7 +5,7 @@
 #include "Enemy2.h"
 #include "Enemy3.h"
 #include "Enemy4.h"
-#include"Item.h"
+#include"ItemGenerator.h"
 #include "TextureID.h"
 #include "Base.h"
 #include "EnemyGenerator.h"
@@ -54,8 +54,9 @@ class MyGame : public gslib::Game {
         // “G‚ð3‘Ì’Ç‰Á
 
         world_.add_actor(new EnemyGenerator{ &world_ });
+        world_.add_actor(new ItemGenerator{ &world_ });
         world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
-        world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+        
 
 
 
