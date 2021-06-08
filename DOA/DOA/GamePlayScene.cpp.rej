@@ -1,0 +1,9 @@
+diff a/DOA/DOA/GamePlayScene.cpp b/DOA/DOA/GamePlayScene.cpp	(rejected hunks)
+@@ -74,6 +74,7 @@
+     world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
+    // world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+ 
++>>>>>>> origin/Scene
+ }
+ 
+ // �X�V
