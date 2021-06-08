@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Base.h"
 #include "EnemyGenerator.h"
-#include "Item.h"
+#include"ItemGenerator.h"
 #include "TextureID.h"
 
 
@@ -10,11 +10,19 @@
 World world_;
 // 開始
 void GamePlayScene::start() {
+
+
+
+
+    // テクスチャの読み込み
     gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
     gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
     gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
     gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
-    gsLoadTexture(TextureItem, "Assets/ITEM.png");
+    gsLoadTexture(TextureNumber, "Assets/NUM.png");
+
+
+
     gsLoadTexture(TextureBase, "Assets/base.png");
     gsLoadTexture(TextureBG1, "Assets/BG1.png");
     gsLoadTexture(TextureBG2, "Assets/BG2.png");
@@ -34,6 +42,35 @@ void GamePlayScene::start() {
 
     is_end_ = false;
     //die = false;
+    gsLoadTexture(TextureItem, "Assets/ITEM.png");
+
+    //gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
+    //gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
+    //gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
+    //gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
+    //gsLoadTexture(TextureItem, "Assets/ITEM.png");
+    //gsLoadTexture(TextureBase, "Assets/base.png");
+    ///*gsLoadTexture(TextureBG1, "Assets/BG1.png");
+    //gsLoadTexture(TextureBG2, "Assets/BG2.png");
+    //gsLoadTexture(TextureBG3, "Assets/BG3.png");
+    //gsLoadTexture(TextureBomb, "Assets/BOMB.png");
+    //gsLoadTexture(TextureNumber, "Assets/NUM.png")*/;
+    //world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
+    //world_.add_actor(new EnemyGenerator{ &world_ });
+    //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+    //world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
+
+
+    world_.add_actor(new ItemGenerator{ &world_ });
+    // プレーヤーを追加
+    world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
+    // 敵を追加
+
+    world_.add_actor(new EnemyGenerator{ &world_ });
+    world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
+   // world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+
+>>>>>>> origin/Scene
 }
 
 // 更新
