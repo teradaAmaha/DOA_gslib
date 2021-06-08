@@ -35,6 +35,7 @@ void GamePlayScene::start() {
     gsLoadTexture(TextureEnemy3, "Assets/ENEMY3.png");
     gsLoadTexture(TextureEnemy4, "Assets/ENEMY4.png");
     gsLoadTexture(TextureBoss, "Assets/BOSS.png");
+    
     world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
     world_.add_actor(new EnemyGenerator{ &world_ });
     //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
@@ -66,6 +67,8 @@ void GamePlayScene::update(float delta_time) {
 }
 // •`‰æ
 void GamePlayScene::draw() const {
+    GSvector2 BG1_position{ 0.0f,0.0f };
+    gsDrawSprite2D(TextureBG2, &BG1_position, NULL, NULL, NULL, NULL, 0.0f);
     world_.draw();
 }
 
