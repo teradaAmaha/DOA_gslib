@@ -162,6 +162,7 @@
     <ClCompile Include="Enemy2.cpp" />
     <ClCompile Include="Enemy3.cpp" />
     <ClCompile Include="Enemy4.cpp" />
+    <ClCompile Include="ItemGenerator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NumberTexture.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Enemy2.h" />
     <ClInclude Include="Enemy3.h" />
     <ClInclude Include="Enemy4.h" />
+    <ClInclude Include="ItemGenerator.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="NumberTexture.h" />
     <ClInclude Include="Player.h" />

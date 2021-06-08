@@ -5,6 +5,8 @@
 Enemy2::Enemy2(IWorld* world, const GSvector2& position)
 {
 	world_= world;
+Enemy2::Enemy2(IWorld* world, const GSvector2& position) {
+	world_ = world;
 	tag_ = "Enemy2Tag";
 	name_ = "Enemy";
 	position_ = position;
