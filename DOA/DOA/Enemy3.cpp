@@ -9,7 +9,7 @@ Enemy3::Enemy3(IWorld* world, const GSvector2& position)
 	name_ = "Enemy";
 	position_ = position;
 	velocity_ = GSvector2{ 0.0f,1.5f };
-	collider_ = BoundingRectangle{ 0.0f,0.0f,32.0f,32.0f };
+	collider_ = BoundingRectangle{ 0.0f,0.0f,64.0f,64.0f };
 	texture_ = TextureEnemy3;
 	
 }
