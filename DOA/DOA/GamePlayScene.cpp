@@ -37,38 +37,12 @@ void GamePlayScene::start() {
     gsLoadTexture(TextureBoss, "Assets/BOSS.png");
     world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
     world_.add_actor(new EnemyGenerator{ &world_ });
-    world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+    //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
     world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
 
     is_end_ = false;
     //die = false;
     gsLoadTexture(TextureItem, "Assets/ITEM.png");
-
-    //gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
-    //gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
-    //gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
-    //gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
-    //gsLoadTexture(TextureItem, "Assets/ITEM.png");
-    //gsLoadTexture(TextureBase, "Assets/base.png");
-    ///*gsLoadTexture(TextureBG1, "Assets/BG1.png");
-    //gsLoadTexture(TextureBG2, "Assets/BG2.png");
-    //gsLoadTexture(TextureBG3, "Assets/BG3.png");
-    //gsLoadTexture(TextureBomb, "Assets/BOMB.png");
-    //gsLoadTexture(TextureNumber, "Assets/NUM.png")*/;
-    //world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
-    //world_.add_actor(new EnemyGenerator{ &world_ });
-    //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
-    //world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
-
-
-    world_.add_actor(new ItemGenerator{ &world_ });
-    // ÉvÉåÅ[ÉÑÅ[Çí«â¡
-    world_.add_actor(new Player{ &world_, GSvector2{ 280.0f, 380.0f } });
-    // ìGÇí«â¡
-
-    world_.add_actor(new EnemyGenerator{ &world_ });
-    world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
-   // world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
 
 
 }
