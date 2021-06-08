@@ -24,8 +24,9 @@ void Base::draw() const {
 }
 
 void Base::alive() {//ライフが０になれば死ぬ
-	--life;//仮ライフ
-	world_->sub_hp(1);
+	//--life;//仮ライフ
+	life -= 2;
+	world_->sub_hp(2);
 	counter = -60;
 	if (life <= 0)
 	{
@@ -55,6 +56,7 @@ void Base::react(Actor& other)
 {
 	if (other.tag() == "EnemyTag") {
 		//各ダメージ量はここで(life)
+		//life -= 2;
 		alive();
 	}
 	if (other.tag() == "Enemy2Tag") {

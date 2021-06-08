@@ -26,7 +26,13 @@ void Enemy3::react(Actor& other) {
 	}
 	if (other.tag() == "PlayerBulletTag") {
 
-		die();
-		world_->add_score(100);
+		if (other.tag() == "PlayerBulletTag") {
+			life -= 1;
+			if (life < 1) {
+				die();
+				world_->add_score(100);
+			}
+		}
+
 	}
 }

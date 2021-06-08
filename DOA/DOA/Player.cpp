@@ -26,7 +26,7 @@ const GSvector2& Player::maxX() const {
 
 // XV
 void Player::update(float delta_time) {
-        world_->sub_timer(1.5);
+        world_->sub_timer(2.5);
     GSvector2 direction{ 0.0f, 0.0f }; // ˆÚ“®•ûŒü
     if (gsGetKeyState(GKEY_LEFT)) {
         direction.x = -1.0f;

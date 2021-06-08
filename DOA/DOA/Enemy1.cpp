@@ -44,6 +44,8 @@ void Enemy1::draw() {
 // Õ“ËƒŠƒAƒNƒVƒ‡ƒ“
 void Enemy1::react(Actor& other) {
 
+    
+    
     if (other.tag() == "BaseTag") {
 
         die();
@@ -51,9 +53,12 @@ void Enemy1::react(Actor& other) {
     }
 
     if (other.tag() == "PlayerBulletTag") {
-
-        die();
-        world_->add_score(100);
+        life -= 1;
+        if (life <= 0) 
+        {
+            die();
+            world_->add_score(100);
+        }
     }
 
 
