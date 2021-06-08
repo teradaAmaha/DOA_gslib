@@ -19,9 +19,15 @@ public:
     virtual std::string next() const override;
     // 終了
     virtual void end() override;
+
 private:
     // ワールドクラス
     World   world_;
+
+    // 終了フラグ
+    bool is_end_{ false };
+
+    //bool die{ false };
 };
 
 #endif

@@ -25,6 +25,9 @@
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="BaseLife.cpp" />
+    <ClCompile Include="GameClearScene.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="ItemGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -55,5 +58,8 @@
     <ClInclude Include="Score.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="BaseLife.h" />
+    <ClInclude Include="GameClearScene.h" />
+    <ClInclude Include="GameOverScene.h" />
+    <ClInclude Include="ItemGenerator.h" />
   </ItemGroup>
 </Project>

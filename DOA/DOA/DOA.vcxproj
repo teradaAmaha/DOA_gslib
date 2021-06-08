@@ -154,6 +154,7 @@
     <ClCompile Include="BoundingRectangle.cpp" />
     <ClCompile Include="EnemyGenerator.cpp" />
     <ClCompile Include="EnemyBeam.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="GamePlayScene.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Enemy2.cpp" />
     <ClCompile Include="Enemy3.cpp" />
     <ClCompile Include="Enemy4.cpp" />
+    <ClCompile Include="ItemGenerator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NumberTexture.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -171,6 +173,7 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="GameClearScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -181,6 +184,8 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyGenerator.h" />
     <ClInclude Include="EnemyBeam.h" />
+    <ClInclude Include="GameClearScene.h" />
+    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="GamePlayScene.h" />
     <ClInclude Include="ISeen.h" />
     <ClInclude Include="Field.h" />
@@ -189,6 +194,7 @@
     <ClInclude Include="Enemy2.h" />
     <ClInclude Include="Enemy3.h" />
     <ClInclude Include="Enemy4.h" />
+    <ClInclude Include="ItemGenerator.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="NumberTexture.h" />
     <ClInclude Include="Player.h" />

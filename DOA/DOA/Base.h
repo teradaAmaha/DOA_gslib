@@ -15,7 +15,8 @@ public:
 
 	void alive(); //ƒ‰ƒCƒt‚ª‚O‚É‚È‚ê‚ÎŽ€‚Ê
 
-	void damageArray();
+	int get() const;
+	//void damageArray();
 private:
 	int life = 100;
 	int counter = 0;

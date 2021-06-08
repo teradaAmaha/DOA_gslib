@@ -44,6 +44,7 @@ void SceneManager::add(const std::string& name, IScene* scene) {
 }
 
 // シーンの変更
+
 void SceneManager::change(const std::string& name) {
     // 現在のシーンを終了
     end();
