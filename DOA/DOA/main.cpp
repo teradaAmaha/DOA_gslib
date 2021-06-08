@@ -26,7 +26,7 @@ class MyGame : public gslib::Game {
  
     // 開始
     void start() override {
-<<<<<<< HEAD
+
         // タイトルシーンの追加
         scene_manager_.add("TitleScene", new TitleScene());
         // ゲームプレイシーンの追加
@@ -38,7 +38,7 @@ class MyGame : public gslib::Game {
         // タイトルシーンから開始
         scene_manager_.change("TitleScene");
         //scene_manager_.change("GameClearScene");
-=======
+
         //// タイトルシーンの追加
         //scene_manager_.add("TitleScene", new TitleScene());
         //// ゲームプレイシーンの追加
@@ -73,7 +73,7 @@ class MyGame : public gslib::Game {
         
 
 
->>>>>>> origin/Scene
+
 
         //画面大きさ（620, 460?）
     }

@@ -70,7 +70,7 @@ void GamePlayScene::start() {
     world_.add_actor(new Base{ &world_, GSvector2{-40.0f,440.0f} });
    // world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
 
->>>>>>> origin/Scene
+
 }
 
 // XV
