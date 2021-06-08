@@ -12,6 +12,8 @@
 #include"SceneManager.h"
 #include"TitleScene.h"
 #include "GamePlayScene.h"
+#include "GameClearScene.h"
+#include "GameOverScene.h"
 
 
 
@@ -28,9 +30,13 @@ class MyGame : public gslib::Game {
         scene_manager_.add("TitleScene", new TitleScene());
         // ゲームプレイシーンの追加
         scene_manager_.add("GamePlayScene", new GamePlayScene());
+        //ゲームクリアーシーンの追加
+        scene_manager_.add("GameClearScene", new GameClearScene());
+        //ゲームオーバーシーンの追加
+        scene_manager_.add("GameOverScene", new GameOverScene());
         // タイトルシーンから開始
         scene_manager_.change("TitleScene");
-
+        //scene_manager_.change("GameClearScene");
 
         //画面大きさ（620, 460?）
     }

@@ -30,7 +30,14 @@ void Base::alive() {//ƒ‰ƒCƒt‚ª‚O‚É‚È‚ê‚ÎŽ€‚Ê
 	if (life <= 0)
 	{
 		die();
+		world_->game_over();
+
 	}
+}
+
+int Base::get() const
+{
+	return life;
 }
 
 //void Base::damageArray()

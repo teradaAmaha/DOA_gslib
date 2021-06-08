@@ -5,6 +5,7 @@
 
 class Actor; // アクタークラスの前方宣言
 class Field;
+class Timer;
 
 // ワールド抽象インターフェース
 class IWorld {
@@ -25,6 +26,8 @@ public:
     virtual void add_score(int score) = 0;
     //タイマーの減算
     virtual void sub_timer(int timer) = 0;
+    //タイマー０になったら
+//    virtual void time_UP(int timer_) = 0;
     //hpの減算
     virtual void sub_hp(int hp) = 0;
 };

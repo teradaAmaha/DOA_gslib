@@ -42,6 +42,13 @@ public:
     // ゲームクリアか？
     bool is_game_clear() const;
 
+    Timer& get_timer() {
+        return timer_;
+    };
+
+  /*  Base* get_base(){
+        return &life;
+    };*/
 
     // コピー禁止
     World(const World& other) = delete;
@@ -55,6 +62,8 @@ private:
     Score		score_;
     //タイマー
     Timer timer_;
+
+   // Base life;
 
     BaseLife baselife;
 
