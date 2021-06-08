@@ -19,7 +19,8 @@ enum {
     TextureCoron,
     TextureBG1,
     TextureBG2,
-    TextureBG3
+    TextureBG3,
+    TextureBG4
 
 };
 

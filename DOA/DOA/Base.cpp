@@ -1,6 +1,6 @@
 #include "Base.h"
 #include "TextureId.h"
-#include <iostream>
+
 #include "World.h"
 #include <vector>
 
