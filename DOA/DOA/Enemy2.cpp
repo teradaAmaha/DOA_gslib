@@ -25,7 +25,7 @@ void Enemy2::react(Actor& other) {
 
 	if (other.tag() == "PlayerBulletTag") {
 		if (other.tag() == "PlayerBulletTag") {
-			life -= 1;
+			life -= 2;
 			if (life < 1) {
 				die();
 				world_->add_score(100);

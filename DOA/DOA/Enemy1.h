@@ -19,7 +19,7 @@ private:
     // ’e”­Ëƒ^ƒCƒ}
     float timer_{ 0.0f };
     int counter = 0;
-    int life = 5;
+    int life = 3;
 };
 
 #endif

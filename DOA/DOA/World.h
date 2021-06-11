@@ -7,6 +7,7 @@
 #include "Score.h"
 #include "Timer.h"
 #include "BaseLife.h"
+#include "Base.h"
 
 // ワールドクラス
 class World : public IWorld {
@@ -63,7 +64,7 @@ private:
     //タイマー
     Timer timer_;
 
-   // Base life;
+    //Base Life;
 
     BaseLife baselife;
 

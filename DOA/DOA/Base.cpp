@@ -36,21 +36,15 @@ void Base::alive() {//ƒ‰ƒCƒt‚ª‚O‚É‚È‚ê‚ÎŽ€‚Ê
 	}
 }
 
+void Base::clear()
+{
+	life = 100;
+}
+
 int Base::get() const
 {
 	return life;
 }
-
-//void Base::damageArray()
-//{
-//	std::vector<int> d;
-//	d[0] = 
-//
-//	for (std::vector<int>::iterator i = d.begin(); i != d.end(); ++i)
-//	{
-//		
-//	}
-//}
 
 void Base::react(Actor& other)
 {

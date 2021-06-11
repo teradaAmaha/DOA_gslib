@@ -40,7 +40,6 @@ void GamePlayScene::start() {
     world_.add_actor(new EnemyGenerator{ &world_ });
     //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
     world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
-
     is_end_ = false;
     //die = false;
     gsLoadTexture(TextureItem, "Assets/ITEM.png");
@@ -57,12 +56,7 @@ void GamePlayScene::update(float delta_time) {
         is_end_ = true;
         
     }
-  /*  world_.update(delta_time);
-    if (world_.get_base().get() == 0)
-    {
-        world_.game_over();
-        die = true;
-    }*/
+  
 
 }
 // •`‰æ

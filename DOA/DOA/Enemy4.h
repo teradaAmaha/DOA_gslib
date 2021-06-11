@@ -12,7 +12,7 @@ public:
 
 	virtual void react(Actor& other)override;
 private:
-	int life = 5;
+	int life = 2;
 };
 
 #endif
