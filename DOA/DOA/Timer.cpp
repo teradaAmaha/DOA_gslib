@@ -34,7 +34,7 @@ int Timer::get() const {
 }
 
 void Timer::clear() {
-	timer_ = 6000;
+	timer_ = 3000;
 }
 
 void Timer::zero(int timeUp)

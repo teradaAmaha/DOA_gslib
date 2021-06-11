@@ -6,9 +6,9 @@ class IWorld;
 class Timer {
 public:
 	//コンストラクタ
-	Timer(int timer = 6000);
+	Timer(int timer = 3000);
 	//タイマーの初期化
-	void initialize(int timer = 6000);
+	void initialize(int timer = 3000);
 	//タイマーの減算
 	void sub(int timer);
 	//タイマーの描画
