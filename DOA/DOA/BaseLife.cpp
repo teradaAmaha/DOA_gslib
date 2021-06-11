@@ -25,7 +25,7 @@ void BaseLife::sub(int hp)
 void BaseLife::draw() const
 {
 	static const NumberTexture number{ TextureNumber, 16, 16 };//NumberTextureのコンストラクタから
-	number.draw(GSvector2{ 280, 400 }, hp_, 4);
+	number.draw(GSvector2{ 280, 400 }, hp_, 3);
 
 	//GSvector2 per{ 310.0f, 400.0f };
 	//gsDrawSprite2D(TexturePer, &per, NULL, NULL, NULL, NULL, NULL);

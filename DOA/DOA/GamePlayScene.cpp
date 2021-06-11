@@ -15,9 +15,9 @@ void GamePlayScene::start() {
 
 
     // テクスチャの読み込み
-    gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
-    gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
     gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
+    gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
+    gsLoadTexture(TextureEnemy, "Assets/ENEMY.png"); 
     gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
     gsLoadTexture(TextureNumber, "Assets/NUM.png");
 

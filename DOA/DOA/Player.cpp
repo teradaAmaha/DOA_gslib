@@ -54,7 +54,7 @@ void Player::update(float delta_time) {
     if (gsGetKeyState(GKEY_SPACE)) {
         if (counter % 8 == 0) {
             world_->add_actor(new PlayerBeam{ world_,
-                position_ + GSvector2{ 50.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });//playerBeamのコンストラクタ呼んでる
+                position_ + GSvector2{ 35.0f, -1.0f }, GSvector2{ 8.0f, 0.0f } });//playerBeamのコンストラクタ呼んでる
         }
     }
 
