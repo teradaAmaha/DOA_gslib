@@ -13,8 +13,11 @@ class Actor {
 public:
     // コンストラクタ
     Actor() = default;
+ 
+
     // 仮想デストラクタ
     virtual ~Actor() = default;
+    
     // 更新
     virtual void update(float delta_time);
     // 描画
@@ -55,6 +58,8 @@ protected:
     std::string        tag_;
     // 座標
     GSvector2          position_{ 0.0f, 0.0f };
+    //３D座標
+    GSvector3          position3D_{ 0.0f, 0.0f ,0.0f };
     // 回転角度
     float              angle_{ 0.0f };
     // 移動量

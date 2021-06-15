@@ -2,6 +2,7 @@
 #define ENEMY_1_H_
 
 #include "Actor.h"
+#include "Enemy1.h"
 
 // “GƒNƒ‰ƒX
 class Enemy1 : public Actor {

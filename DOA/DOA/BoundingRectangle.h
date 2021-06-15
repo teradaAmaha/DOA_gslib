@@ -16,6 +16,8 @@ public:
     bool intersects(const BoundingRectangle& other) const;
     // •½sˆÚ“®
     BoundingRectangle translate(const GSvector2& position) const;
+    // •½sˆÚ“®3D
+   // BoundingRectangle translate3D(const GSvector3& position) const;
     // •
     float width() const;
     // ‚‚³

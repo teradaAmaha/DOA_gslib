@@ -29,6 +29,8 @@ void Enemy1::update(float delta_time) {
         }
     }
 
+
+
     counter++;
     //// Šg’£ƒGƒŠƒAŠO‚È‚ç€–S
     //if (world_->field().is_outside(collider())) {

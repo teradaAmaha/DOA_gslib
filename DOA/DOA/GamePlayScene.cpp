@@ -35,6 +35,7 @@ void GamePlayScene::start() {
     gsLoadTexture(TextureEnemy3, "Assets/ENEMY3.png");
     gsLoadTexture(TextureEnemy4, "Assets/ENEMY4.png");
     gsLoadTexture(TextureBoss, "Assets/BOSS.png");
+    gsLoadMesh(TextureFBX, "Assets/MiniGun_.fbx");
     
     world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
     world_.add_actor(new EnemyGenerator{ &world_ });
@@ -110,4 +111,5 @@ void GamePlayScene::end() {
     gsDeleteTexture(TextureEnemy2);
     gsDeleteTexture(TextureEnemy3);
     gsDeleteTexture(TextureEnemy4);
+    gsDeleteMesh(TextureFBX);
 }
