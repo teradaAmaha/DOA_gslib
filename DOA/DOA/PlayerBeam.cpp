@@ -34,5 +34,14 @@ void PlayerBeam::react(Actor& other) {
     if (other.tag() == "Enemy1Tag") {
         die();
     }
+    if (other.tag() == "Enemy2Tag") {
+        die();
+    }
+    if (other.tag() == "Enemy3Tag") {
+        die();
+    }
+    if (other.tag() == "Enemy4Tag") {
+        die();
+    }
 }
 

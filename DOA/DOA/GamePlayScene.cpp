@@ -15,9 +15,9 @@ void GamePlayScene::start() {
 
 
     // テクスチャの読み込み
-    gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
-    gsLoadTexture(TextureEnemy, "Assets/ENEMY.png");
     gsLoadTexture(TexturePlayerBeam, "Assets/BEAM.png");
+    gsLoadTexture(TexturePlayer, "Assets/SHIP.png");
+    gsLoadTexture(TextureEnemy, "Assets/ENEMY.png"); 
     gsLoadTexture(TextureEnemyBeam, "Assets/EBEAM.png");
     gsLoadTexture(TextureNumber, "Assets/NUM.png");
 
@@ -35,11 +35,16 @@ void GamePlayScene::start() {
     gsLoadTexture(TextureEnemy3, "Assets/ENEMY3.png");
     gsLoadTexture(TextureEnemy4, "Assets/ENEMY4.png");
     gsLoadTexture(TextureBoss, "Assets/BOSS.png");
+    gsLoadMesh(TextureFBX, "Assets/MiniGun_.fbx");
     
     world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
     world_.add_actor(new EnemyGenerator{ &world_ });
     //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
+
     world_.add_actor(new Base{ &world_,GSvector2{10.0f,600.0f} });
+
+
+    world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
 
     is_end_ = false;
     //die = false;
@@ -57,12 +62,7 @@ void GamePlayScene::update(float delta_time) {
         is_end_ = true;
         
     }
-  /*  world_.update(delta_time);
-    if (world_.get_base().get() == 0)
-    {
-        world_.game_over();
-        die = true;
-    }*/
+  
 
 }
 // 描画
@@ -116,4 +116,5 @@ void GamePlayScene::end() {
     gsDeleteTexture(TextureEnemy2);
     gsDeleteTexture(TextureEnemy3);
     gsDeleteTexture(TextureEnemy4);
+    gsDeleteMesh(TextureFBX);
 }

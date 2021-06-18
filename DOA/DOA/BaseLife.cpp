@@ -36,6 +36,6 @@ int BaseLife::get() const {
 }
 
 void BaseLife::clear() {
-	hp_ = 0;
+	hp_ = 100;
 }
 

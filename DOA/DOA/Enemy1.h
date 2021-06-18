@@ -2,6 +2,7 @@
 #define ENEMY_1_H_
 
 #include "Actor.h"
+#include "Enemy1.h"
 
 // 敵クラス
 class Enemy1 : public Actor {
@@ -19,7 +20,7 @@ private:
     // 弾発射タイマ
     float timer_{ 0.0f };
     int counter = 0;
-
+    int life = 3;
 };
 
 #endif

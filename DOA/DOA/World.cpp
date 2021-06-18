@@ -21,12 +21,15 @@ void World::draw() const {
 // ゲームオーバー
 void World::game_over() {
     is_game_over_ = true;
+     timer_.clear();
+     baselife.clear();
 }
 
 // ゲームクリアー
 void World::game_clear() {
     is_game_clear_ = true;
     timer_.clear();
+   // Life.clear();
     baselife.clear();
 }
 

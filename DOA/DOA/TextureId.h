@@ -20,7 +20,8 @@ enum {
     TextureBG1,
     TextureBG2,
     TextureBG3,
-    TextureBG4
+    TextureBG4,
+    TextureFBX,
 
 };
 

@@ -8,6 +8,7 @@ void Actor::draw() const {
     // スプライトの表示
     
     gsDrawSprite2D(texture_, &position_, NULL, NULL, NULL, NULL, angle_);
+    gsDrawMesh(texture_);
 }
 
 // GUI描画
@@ -72,4 +73,9 @@ GSvector2 Actor::velocity() const {
 // 衝突判定データを取得
 BoundingRectangle Actor::collider() const {
     return collider_.translate(position_);
+   // return collider_.translate3D(position3D_);
 }
+//
+//BoundingRectangle Actor::collider() const {
+//    return collider_.translate(position_);
+//}

@@ -28,8 +28,13 @@ void Enemy4::react(Actor& other) {
 
     }
     if (other.tag() == "PlayerBulletTag") {
+        if (other.tag() == "PlayerBulletTag") {
+            life -= 1;
+            if (life < 1) {
+                die();
+                world_->add_score(100);
+            }
+        }
 
-        die();
-        world_->add_score(100);
     }
 }

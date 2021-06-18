@@ -23,7 +23,11 @@ void Timer::sub(int timer) {
 void Timer::draw() const
 {
 	static const NumberTexture number{ TextureNumber, 16, 16 };
+
 	number.draw(GSvector2{ 600, 0 }, timer_, 2);
+
+	number.draw(GSvector2{ 280, 0 }, timer_, 4);
+
 	
 	GSvector2 pp{ 622.0f,0.0f };
 	gsDrawSprite2D(TextureCoron, &pp, NULL, NULL, NULL, NULL, NULL);
@@ -34,7 +38,7 @@ int Timer::get() const {
 }
 
 void Timer::clear() {
-	timer_ = 0;
+	timer_ = 3000;
 }
 
 void Timer::zero(int timeUp)

@@ -2,7 +2,7 @@
 #include"IWorld.h"
 #include"Item.h"
 
-
+class Enemy1;
 ItemGenerator::ItemGenerator(IWorld* world) {
 	world_ = world;
 	tag_ = "ItemGenerator";
@@ -13,14 +13,11 @@ ItemGenerator::ItemGenerator(IWorld* world) {
 
 void ItemGenerator::update(float delta_time) {
 	if (timer_ < 0.0f) {
-		//出現座標
-		GSvector2 position{
-			
-		};
+		
 		//アイテムの生成
 
-		world_->add_actor(new Item{ world_, position });
-		timer_ = gsRandf(30.0f,120.0f);
+		//world_->add_actor(new Item{ world_, Enemy1 position });
+		//timer_ = gsRandf(30.0f,120.0f);
 	}
 
 	//生成速度

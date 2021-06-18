@@ -6,7 +6,7 @@
 // コンストラクタ
 Enemy1::Enemy1(IWorld* world, const GSvector2& position) {
     world_ = world;
-    tag_ = "EnemyTag";
+    tag_ = "Enemy1Tag";
     name_ = "Enemy";
     position_ = position;
     velocity_ = GSvector2{ 0.0f, 1.5f };
@@ -22,12 +22,14 @@ void Enemy1::update(float delta_time) {
     timer_ += delta_time;
     // 120フレーム経過したか？
     if (timer_ > 60.0f) {
-        if (counter % 10 == 0) {
+        if (counter % 50 == 0) {
             world_->add_actor(new EnemyBeam{ world_,
                 position_ + GSvector2{ 10.0f, 25.0f }, GSvector2{ 8.0f, 0.0f } });
             timer_ = 0.0f;
         }
     }
+
+
 
     counter++;
     //// 拡張エリア外なら死亡
@@ -44,6 +46,8 @@ void Enemy1::draw() {
 // 衝突リアクション
 void Enemy1::react(Actor& other) {
 
+    
+    
     if (other.tag() == "BaseTag") {
 
         die();
@@ -51,9 +55,12 @@ void Enemy1::react(Actor& other) {
     }
 
     if (other.tag() == "PlayerBulletTag") {
-
-        die();
-        world_->add_score(100);
+        life -= 1;
+        if (life <= 0) 
+        {
+            die();
+            world_->add_score(100);
+        }
     }
 
 

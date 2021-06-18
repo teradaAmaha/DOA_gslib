@@ -23,6 +23,10 @@ bool BoundingRectangle::intersects(const BoundingRectangle& other) const {
 BoundingRectangle BoundingRectangle::translate(const GSvector2& position) const {
     return BoundingRectangle{ min_ + position, max_ + position };
 }
+// ïΩçsà⁄ìÆ3D
+//BoundingRectangle BoundingRectangle::translate3D(const GSvector3& position3D) const {
+//    return BoundingRectangle{ min_ + position3D, max_ + position3D, 0 };
+//}
 
 // ïù
 float BoundingRectangle::width() const {

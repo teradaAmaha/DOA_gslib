@@ -170,6 +170,7 @@
     <ClCompile Include="PlayerBeam1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Score.cpp" />
+    <ClCompile Include="TemporaryPlayer.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="World.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneNull.h" />
     <ClInclude Include="Score.h" />
+    <ClInclude Include="TemporaryPlayer.h" />
     <ClInclude Include="TextureId.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />

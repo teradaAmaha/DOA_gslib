@@ -13,7 +13,7 @@ public:
 	virtual void draw() const override;
 private:
 	float timer_{ 0.0f };
-	
+    
 };
 
 #endif//ITEM_GEGERATOR_H

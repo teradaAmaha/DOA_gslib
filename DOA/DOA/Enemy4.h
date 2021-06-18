@@ -11,7 +11,8 @@ public:
 	virtual void update(float delta_time) override;
 
 	virtual void react(Actor& other)override;
-
+private:
+	int life = 2;
 };
 
 #endif
