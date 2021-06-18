@@ -21,9 +21,9 @@ public:
 
 private:
     // ゲーム画面エリア
-    BoundingRectangle area_{ 0.0f, 0.0f, 640.0f, 480.0f };
+    BoundingRectangle area_{ 0.0f, 0.0f, 1280.0f, 720.0f };
     // 拡張エリア
-    BoundingRectangle extend_area_{ -128, -128, 640.0f + 128.0f, 480.0f + 128.0f };
+    BoundingRectangle extend_area_{ -128, -128, 1280.0f + 128.0f, 720.0f + 128.0f };
 };
 
 #endif

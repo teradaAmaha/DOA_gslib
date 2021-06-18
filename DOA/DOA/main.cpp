@@ -20,10 +20,15 @@
 
 // ゲームクラス
 class MyGame : public gslib::Game {
-
-    //シーンマネージャー
+public:
+    // コンストラクタ（解像度の指定とフルスクリーンフラグをtrueにする）
+    MyGame() : gslib::Game{ 1280, 720, true } {
+    }
     SceneManager scene_manager_;
+
+
  
+
     // 開始
     void start() override {
 
@@ -39,7 +44,7 @@ class MyGame : public gslib::Game {
         scene_manager_.change("TitleScene");
         //scene_manager_.change("GameClearScene");
 
-
+       
         //画面大きさ（620, 460?）
     }
     // 更新
@@ -63,9 +68,11 @@ class MyGame : public gslib::Game {
 
        
     }
+
 };
 
 // メイン関数
 int main() {
     return MyGame().run();
 }
+

@@ -39,7 +39,7 @@ void GamePlayScene::start() {
     world_.add_actor(new Player{ &world_, GSvector2{ 0.0f, 200.0f } });
     world_.add_actor(new EnemyGenerator{ &world_ });
     //world_.add_actor(new Item{ &world_,GSvector2{100.0f,100.0f} });
-    world_.add_actor(new Base{ &world_,GSvector2{-40.0f,440.0f} });
+    world_.add_actor(new Base{ &world_,GSvector2{10.0f,600.0f} });
 
     is_end_ = false;
     //die = false;

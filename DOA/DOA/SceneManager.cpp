@@ -28,6 +28,7 @@ void SceneManager::update(float delta_time) {
 void SceneManager::draw() const {
     // Œ»İ‚ÌƒV[ƒ“‚ğ•`‰æ
     current_scene_->draw();
+    
 }
 
 // I—¹

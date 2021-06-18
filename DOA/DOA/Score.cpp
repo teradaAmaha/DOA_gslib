@@ -23,7 +23,7 @@ void Score::add(int score) {
 // スコアの描画
 void Score::draw() const {
     static const NumberTexture number{ TextureNumber, 16, 16 };
-    number.draw(GSvector2{ 520, 0 }, score_, 7);
+    number.draw(GSvector2{ 1100, 0 }, score_, 7);
 }
 
 // スコアの取得

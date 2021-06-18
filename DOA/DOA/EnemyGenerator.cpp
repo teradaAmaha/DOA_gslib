@@ -19,7 +19,7 @@ void EnemyGenerator::update(float delta_time) {
 	if (timer_1_ < 0.0f) {
 		//oŒ»À•W
 		GSvector2 position{
-			gsRandf(0.0f,620.0f - 32.0f),
+			gsRandf(0.0f,1280.0f - 32.0f),
 			0.0f
 		};
 		//“G‚Ì¶¬
@@ -30,7 +30,7 @@ void EnemyGenerator::update(float delta_time) {
 	if (timer_2_ < 0.0f) {
 		//oŒ»À•W
 		GSvector2 position{
-			gsRandf(0.0f,620.0f - 32.0f),
+			gsRandf(0.0f,1280.0f - 32.0f),
 			0.0f
 		};
 		//“G‚Ì¶¬
@@ -40,7 +40,7 @@ void EnemyGenerator::update(float delta_time) {
 	if (timer_3_ < 0.0f) {
 		//oŒ»À•W
 		GSvector2 position{
-			gsRandf(0.0f,620.0f - 32.0f),
+			gsRandf(0.0f,1280.0f - 32.0f),
 			0.0f
 		};
 		//“G‚Ì¶¬
@@ -50,7 +50,7 @@ void EnemyGenerator::update(float delta_time) {
 	if (timer_4_ < 0.0f) {
 		//oŒ»À•W
 		GSvector2 position{
-			gsRandf(0.0f,620.0f - 32.0f),
+			gsRandf(0.0f,1280.0f - 32.0f),
 			0.0f
 		};
 		//“G‚Ì¶¬

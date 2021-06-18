@@ -32,10 +32,10 @@ void TitleScene::draw() const {
     draw_background(TextureBG1, scroll_ * 3.0f);
     gsDrawSprite2D(TextureBG4,0 , NULL, NULL, NULL, NULL, 0.0f);
     // É^ÉCÉgÉãÉçÉSÇÃï`âÊ
-    const static GSvector2 position_logo{ 64.0f, 50.0f };
+    const static GSvector2 position_logo{ 400.0f, 60.0f };
     gsDrawSprite2D(TextureTitleLogo, &position_logo, NULL, NULL, NULL, NULL, 0.0f);
     // ëÄçÏï˚ñ@ÇÃï`âÊ
-    const static GSvector2 position_start{ 170.0f, 260.0f };
+    const static GSvector2 position_start{ 500.0f, 350.0f };
     gsDrawSprite2D(TextureTitleStart, &position_start, NULL, NULL, NULL, NULL, 0.0f);
 }
 
@@ -63,7 +63,7 @@ void TitleScene::end() {
 
 // îwåiÇÃï`âÊ
 void TitleScene::draw_background(GSuint id, float scroll) const {
-    GSrect rect{ scroll, 0.0f, scroll + 640.0f, 480.0f };
+    GSrect rect{ scroll, 0.0f, scroll + 1280.0f, 720.0f };
     gsDrawSprite2D(id, NULL, &rect, NULL, NULL, NULL, 0.0f);
 }
 
