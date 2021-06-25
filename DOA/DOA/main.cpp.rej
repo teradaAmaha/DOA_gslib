@@ -1,9 +1,0 @@
-diff a/DOA/DOA/main.cpp b/DOA/DOA/main.cpp	(rejected hunks)
-@@ -26,6 +26,7 @@
-  
-     // �J�n
-     void start() override {
-+<<<<<<< HEAD
-         // �^�C�g���V�[���̒ǉ�
-         scene_manager_.add("TitleScene", new TitleScene());
-         // �Q�[���v���C�V�[���̒ǉ�
