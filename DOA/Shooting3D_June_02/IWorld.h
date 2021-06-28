@@ -25,7 +25,10 @@ public:
     virtual int count_actor_with_tag(const std::string& tag) const = 0;
     // メッセージの送信
     virtual void send_message(const std::string& message, void* param = nullptr) = 0;
-
+    // ゲームオーバー
+    virtual void game_over() = 0;
+    // ゲームクリア
+    virtual void game_clear() = 0;
     // フィールドの取得
     virtual Field* field() = 0;
     // カメラの取得

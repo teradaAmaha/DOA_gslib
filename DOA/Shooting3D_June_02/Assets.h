@@ -14,6 +14,8 @@ enum
 {
 	//2Dスプライト
 	Texture_BgTileNebulaGreen,
+	TextureTitleBG,
+	TextureTitleLogo,
 
 	//3Dスプライト
 	Texture_EffectLazerCyan,
