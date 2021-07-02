@@ -146,6 +146,7 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="ActorManager.cpp" />
     <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="Base.cpp" />
     <ClCompile Include="BoundingSphere.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Felid.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="ActorManager.h" />
     <ClInclude Include="Assets.h" />
     <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="Base.h" />
     <ClInclude Include="BoundingSphere.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Field.h" />

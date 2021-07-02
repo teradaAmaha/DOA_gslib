@@ -16,6 +16,7 @@ enum
 	Texture_BgTileNebulaGreen,
 	TextureTitleBG,
 	TextureTitleLogo,
+	TextureBase,
 
 	//3Dスプライト
 	Texture_EffectLazerCyan,
