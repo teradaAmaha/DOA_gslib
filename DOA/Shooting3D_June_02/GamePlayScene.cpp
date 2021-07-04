@@ -39,8 +39,11 @@ void GamePlayScene::start()
          GSvector3{  30.0f , 100.0f, 0.0f }, GSvector3{ 0.0f , -1.0f, 0.0f } });
     world_.add_actor(new Asteroid{ &world_,
          GSvector3{ -30.0f , 100.0f, 0.0f }, GSvector3{ 0.0f , -1.0f, 0.0f } });
+<<<<<<< HEAD
     // 敵を追加
     world_.add_actor(new Enemy{ &world_, GSvector3{ -20.0f , 100.0f, 0.0f } });
+=======
+    gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
 
 }
 
@@ -54,6 +57,10 @@ void GamePlayScene::draw() const
 {
     // ワールドクラスの描画
     world_.draw();
+
+    const static GSvector2 position_Base{ 1.0f, 400.0f };
+    //タイトルロゴの描画
+    gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
 }
 
 bool GamePlayScene::is_end() const
@@ -86,4 +93,5 @@ void GamePlayScene::end()
     gsDeleteMesh(Mesh_Asteroid01);
     // テクスチャの削除
     gsDeleteTexture(Texture_BgTileNebulaGreen);
+    gsDeleteTexture(TextureBase);
 }

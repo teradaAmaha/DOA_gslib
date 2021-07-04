@@ -1,0 +1,9 @@
+diff a/DOA/Shooting3D_June_02/GamePlayScene.cpp b/DOA/Shooting3D_June_02/GamePlayScene.cpp	(rejected hunks)
+@@ -43,6 +43,7 @@
+ <<<<<<< HEAD
+     // �G��ǉ�
+     world_.add_actor(new Enemy{ &world_, GSvector3{ -20.0f , 100.0f, 0.0f } });
++=======
+     gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
+ 
+ }

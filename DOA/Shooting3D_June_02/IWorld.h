@@ -35,6 +35,7 @@ public:
     virtual Actor* camera() = 0;
     // ƒ‰ƒCƒg‚ÌŽæ“¾
     virtual Actor* light() = 0;
+    
 };
 
 #endif
