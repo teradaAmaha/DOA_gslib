@@ -21,6 +21,7 @@
     <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="CSVReader.cpp" />
     <ClCompile Include="EnemyGenerator.cpp" />
+    <ClCompile Include="Item.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -47,5 +48,6 @@
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="CSVReader.h" />
     <ClInclude Include="EnemyGenerator.h" />
+    <ClInclude Include="Item.h" />
   </ItemGroup>
 </Project>
