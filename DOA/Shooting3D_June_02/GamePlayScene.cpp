@@ -10,6 +10,7 @@
 #include "World.h"
 #include "Enemy.h"
 #include "EnemyGenerator.h"
+#include"Item.h"
 
 World world_;
 void GamePlayScene::start()
@@ -25,6 +26,8 @@ void GamePlayScene::start()
     // 敵メッシュの読み込み
     gsLoadMesh(Mesh_Enemy, "Assets/Model/vehicle_enemyShip.msh");
     gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
+    // アイテムの読み込み
+        gsLoadMesh(Mesh_Item, "Assets/Model/06_UFO_.msh");
     // フィールドの追加
     world_.add_field(new Field{ Texture_BgTileNebulaGreen });
     // カメラの追加
@@ -33,6 +36,9 @@ void GamePlayScene::start()
     world_.add_light(new Light{ &world_ });
     // プレーヤの追加
     world_.add_actor(new Player{ &world_, GSvector3{ 0.0f, -60.0f, 0.0f } });
+    //アイテム
+    world_.add_actor(new Item{ &world_, GSvector3{ 0.0f, 100.0f, 0.0f }
+         ,GSvector3{0.0f, -1.0f, 0.0f} });
     // 敵生成クラスの追加
     world_.add_actor(new EnemyGenerator{ &world_, "Stage01.csv" });
 

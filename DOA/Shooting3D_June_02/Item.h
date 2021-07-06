@@ -1,23 +1,19 @@
-#ifndef PLAYER_H_
-#define PLAYER_H_
+#ifndef ITEM_H_
+#define ITEM_H_
 
 #include "Actor.h"
 
 // プレーヤ
-class Player : public Actor {
+class Item : public Actor {
 public:
     // コンストラクタ
-    Player(IWorld* world, const GSvector3& position);
+    Item(IWorld* world, const GSvector3& position, const GSvector3& velocity);
     // 更新
     virtual void update(float delta_time) override;
     // 描画
     virtual void draw() const override;
     // 衝突処理
     virtual void react(Actor& other) override;
-
-private:
-    bool isItem = false;
-    int timer_ = 0;
 };
 
 

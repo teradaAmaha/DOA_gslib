@@ -7,6 +7,7 @@ enum {
 	Mesh_Asteroid01,
 	Mesh_Asteroid02,
 	Mesh_Asteroid03,
+	Mesh_Item,
 };
 
 //テクスチャデータ

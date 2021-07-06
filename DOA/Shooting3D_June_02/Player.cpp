@@ -47,9 +47,30 @@ void Player::update(float delta_time) {
     position.y = CLAMP(position.y, -MovingRangeY, MovingRangeY);
     // À•W‚Ìİ’è
     transform_.position(position);
+
+   
+    //©‹@”­Ë
     if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
-        world_->add_actor(
-            new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+
+        if (isItem == true)
+        { //ƒJƒEƒ“ƒg‚µ‚Ä‚¨‚­
+            timer_++;
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 6.0f, 0.0f }));
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
+            if (timer_ > 60) {
+                timer_ = 0; 
+                isItem = false;
+            }
+        }
+        else if (isItem == false)
+        {
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+        }
     }
 
 }
@@ -67,5 +88,9 @@ void Player::react(Actor& other) {
     // “G‚ÆÕ“Ë‚µ‚½ê‡‚Í€–S
     if (other.tag() == "EnemyTag") {
         die();
+    }
+    // “G‚ÆÕ“Ë‚µ‚½ê‡‚Í€–S
+    if (other.tag() == "ItemTag") {
+        isItem = true;
     }
 }
