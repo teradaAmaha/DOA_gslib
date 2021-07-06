@@ -24,7 +24,7 @@ void TitleScene::draw() const {
 	//背景の描画
 	gsDrawSprite2D(TextureTitleBG, 0, NULL, NULL, NULL, NULL, 0.0f);
 	//タイトルロゴの描画位置
-	const static GSvector2 position_logo{ 64.0f, 50.0f };
+	const static GSvector2 position_logo{ 370.0f, 200.0f };
 	//タイトルロゴの描画
 	gsDrawSprite2D(TextureTitleLogo, &position_logo, NULL, NULL, NULL, NULL, 0.0f);
 }

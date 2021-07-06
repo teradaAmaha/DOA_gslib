@@ -16,7 +16,7 @@ void Field::update(float delta_time) {
 // •`‰æ
 void Field::draw() const {
     // ”wŒi‰æ‘œ‚Ì•`‰æ
-    const GSrect src_rect{ 0.0f, scroll_, 640.0f, 480.0f + scroll_ };
+    const GSrect src_rect{ 0.0f, scroll_, 1280.0f, 720.0f + scroll_ };
     gsDrawSprite2D(bg_, NULL, &src_rect, NULL, NULL, NULL, 0.0f);
 }
 

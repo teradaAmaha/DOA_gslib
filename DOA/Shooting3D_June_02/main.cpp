@@ -13,6 +13,9 @@
 
 // ゲームクラス
 class MyGame : public gslib::Game {
+public:
+    MyGame() : gslib::Game{ 1280, 720, true } {
+    }
     // ワールドクラス
     SceneManager scene_manager_;
 

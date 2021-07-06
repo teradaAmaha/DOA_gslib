@@ -25,7 +25,7 @@ void GamePlayScene::start()
     // ライトの追加
     world_.add_light(new Light{ &world_ });
     // プレーヤの追加
-    world_.add_actor(new Player{ &world_, GSvector3{ 0.0f, 0.0f, 0.0f } });
+    world_.add_actor(new Player{ &world_, GSvector3{ 0.0f, -60.0f, 0.0f } });
     // 隕石を３個追加
     world_.add_actor(new Asteroid{ &world_,
          GSvector3{ 0.0f , 100.0f, 0.0f }, GSvector3{ 0.0f , -1.0f, 0.0f } });
@@ -48,7 +48,7 @@ void GamePlayScene::draw() const
     // ワールドクラスの描画
     world_.draw();
 
-    const static GSvector2 position_Base{ 1.0f, 400.0f };
+    const static GSvector2 position_Base{ 1.0f, 700.0f };
     //タイトルロゴの描画
     gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
 }
