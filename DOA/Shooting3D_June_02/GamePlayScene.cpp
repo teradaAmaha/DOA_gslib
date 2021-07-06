@@ -9,6 +9,7 @@
 #include "Field.h"
 #include "World.h"
 #include "Enemy.h"
+#include "EnemyGenerator.h"
 
 World world_;
 void GamePlayScene::start()
@@ -23,7 +24,7 @@ void GamePlayScene::start()
     gsLoadTexture(Texture_EffectLazerCyan, "Assets/Effect/fx_lazer_cyan_dff.png");
     // 敵メッシュの読み込み
     gsLoadMesh(Mesh_Enemy, "Assets/Model/vehicle_enemyShip.msh");
-
+    gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
     // フィールドの追加
     world_.add_field(new Field{ Texture_BgTileNebulaGreen });
     // カメラの追加
@@ -32,18 +33,10 @@ void GamePlayScene::start()
     world_.add_light(new Light{ &world_ });
     // プレーヤの追加
     world_.add_actor(new Player{ &world_, GSvector3{ 0.0f, -60.0f, 0.0f } });
-    // 隕石を３個追加
-    world_.add_actor(new Asteroid{ &world_,
-         GSvector3{ 0.0f , 100.0f, 0.0f }, GSvector3{ 0.0f , -1.0f, 0.0f } });
-    world_.add_actor(new Asteroid{ &world_,
-         GSvector3{  30.0f , 100.0f, 0.0f }, GSvector3{ 0.0f , -1.0f, 0.0f } });
-    world_.add_actor(new Asteroid{ &world_,
-         GSvector3{ -30.0f , 100.0f, 0.0f }, GSvector3{ 0.0f , -1.0f, 0.0f } });
-<<<<<<< HEAD
-    // 敵を追加
-    world_.add_actor(new Enemy{ &world_, GSvector3{ -20.0f , 100.0f, 0.0f } });
-=======
-    gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
+    // 敵生成クラスの追加
+    world_.add_actor(new EnemyGenerator{ &world_, "Stage01.csv" });
+
+   
 
 }
 
@@ -58,8 +51,8 @@ void GamePlayScene::draw() const
     // ワールドクラスの描画
     world_.draw();
 
-    const static GSvector2 position_Base{ 1.0f, 400.0f };
-    //タイトルロゴの描画
+    const static GSvector2 position_Base{ 1.0f, 450.0f };
+    
     gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
 }
 

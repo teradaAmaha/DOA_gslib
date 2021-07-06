@@ -9,7 +9,7 @@ BoundingSphere BoundingSphere::translate(const GSvector3& position)const {
 }
 //À•W•ÏŠ·
 BoundingSphere BoundingSphere::transform(const GSmatrix4& matrix)const {
-	return BoundingSphere{ radius * matrix.getScale().y,matrix.transform(center) };
+	return BoundingSphere{ radius * matrix.getScale().y, matrix.transform(center) };
 }
 
 //Œğ·‚µ‚Ä‚¢‚é‚©
