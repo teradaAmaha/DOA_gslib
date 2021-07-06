@@ -1,5 +1,8 @@
 #include "Player.h"
 #include "Assets.h"
+#include "IWorld.h"
+#include "PlayerBullet.h"
+
 
 // 移動範囲
 const float MovingRangeX = 100.0f;
@@ -26,12 +29,12 @@ void Player::update(float delta_time) {
     if (gsGetKeyState(GKEY_RIGHT) == GS_TRUE) {
         inputVelocity.x = 1.0f;
     }
-    if (gsGetKeyState(GKEY_UP) == GS_TRUE) {
+  /*  if (gsGetKeyState(GKEY_UP) == GS_TRUE) {
         inputVelocity.y = 1.0f;
     }
     if (gsGetKeyState(GKEY_DOWN) == GS_TRUE) {
         inputVelocity.y = -1.0f;
-    }
+    }*/
     // 移動量を計算
     float speed = 1.0f;    // 移動スピード
     velocity_ = inputVelocity.normalized() * speed * delta_time;
@@ -44,6 +47,11 @@ void Player::update(float delta_time) {
     position.y = CLAMP(position.y, -MovingRangeY, MovingRangeY);
     // 座標の設定
     transform_.position(position);
+    if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
+        world_->add_actor(
+            new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+    }
+
 }
 
 // 描画

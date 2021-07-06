@@ -10,6 +10,8 @@
 #include"SceneManager.h"
 #include"TitleScene.h"
 #include "GamePlayScene.h"
+#include "Enemy.h"
+
 
 // ƒQ[ƒ€ƒNƒ‰ƒX
 class MyGame : public gslib::Game {
