@@ -18,8 +18,8 @@ Item::Item(IWorld* world, const GSvector3& position,const GSvector3& velocity) {
 
 // 更新
 void Item::update(float delta_time) {
-    // 自機がｙ軸プラス方向を向くように回転させる
-    transform_.eulerAngles(-90.0f, 180.0f, 0.0f);
+    // アイテムがｙ軸プラス方向を向くように回転させる
+    transform_.eulerAngles(-180.0f, 180.0f, 0.0f);
     // 移動する（ワールド座標系を基準に移動）
     transform_.translate(velocity_ * delta_time, GStransform::Space::World);
     
