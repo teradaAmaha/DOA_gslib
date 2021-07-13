@@ -1,0 +1,9 @@
+diff a/DOA/Shooting3D_June_02/Player.cpp b/DOA/Shooting3D_June_02/Player.cpp	(rejected hunks)
+@@ -86,6 +86,7 @@
+ // �Փˏ���
+ void Player::react(Actor& other) {
+     // �G�ƏՓ˂����ꍇ�͎��S
++<<<<<<< HEAD
+   
+ =======
+     if (other.tag() == "EnemyTag") {

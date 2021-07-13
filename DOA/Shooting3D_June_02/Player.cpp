@@ -47,9 +47,30 @@ void Player::update(float delta_time) {
     position.y = CLAMP(position.y, -MovingRangeY, MovingRangeY);
     // 座標の設定
     transform_.position(position);
+
+   
+    //自機発射
     if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
-        world_->add_actor(
-            new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+
+        if (isItem == true)
+        { //カウントしておく
+            timer_++;
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 6.0f, 0.0f }));
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
+            if (timer_ > 60) {
+                timer_ = 0; 
+                isItem = false;
+            }
+        }
+        else if (isItem == false)
+        {
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+        }
     }
 
 }
@@ -65,5 +86,15 @@ void Player::draw() const {
 // 衝突処理
 void Player::react(Actor& other) {
     // 敵と衝突した場合は死亡
+<<<<<<< HEAD
   
+=======
+    if (other.tag() == "EnemyTag") {
+        die();
+    }
+    // 敵と衝突した場合は死亡
+    if (other.tag() == "ItemTag") {
+        isItem = true;
+    }
+>>>>>>> 1d43e4cf58ca6df486ab7c205fa613e1d8afda96
 }

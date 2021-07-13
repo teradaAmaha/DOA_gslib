@@ -158,6 +158,7 @@
     <ClCompile Include="Felid.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="GamePlayScene.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="GamePlayScene.h" />
     <ClInclude Include="IScene.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Player.h" />

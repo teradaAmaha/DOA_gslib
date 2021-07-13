@@ -23,6 +23,7 @@
     <ClCompile Include="EnemyGenerator.cpp" />
     <ClCompile Include="DamageAssets.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="Item.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -51,5 +52,6 @@
     <ClInclude Include="DamageAssets.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="Item.h" />
   </ItemGroup>
 </Project>
