@@ -16,6 +16,8 @@ public:
     bool is_inside(const GSvector3& position) const;
     // フィールド外か？
     bool is_outside(const GSvector3& position) const;
+    //フィールド下出てるか？
+    bool is_over(const GSvector3& position) const;
 
     // コピー禁止
     Field(const Field& other) = delete;

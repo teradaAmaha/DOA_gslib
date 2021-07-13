@@ -15,5 +15,4 @@ public:
     // Õ“ËƒŠƒAƒNƒVƒ‡ƒ“
     virtual void react(Actor& other) override;
 };
-
 #endif

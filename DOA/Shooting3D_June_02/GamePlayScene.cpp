@@ -7,13 +7,14 @@
 #include "Light.h"
 #include "Camera.h"
 #include "Field.h"
-#include "World.h"
+#include "DamageAssets.h"
 #include "Enemy.h"
 #include "EnemyGenerator.h"
 #include"Item.h"
 #include <GSmusic.h>
 
 World world_;
+
 void GamePlayScene::start()
 {
     // BGMの読み込み (GS_TRUEでループ再生）
@@ -29,8 +30,6 @@ void GamePlayScene::start()
         "Assets/Sound/explosion_asteroid.wav", 1, GWAVE_DEFAULT);
     gsLoadSE(Se_WeaponPlayer, "Assets/Sound/weapon_player.wav", 5, GWAVE_DEFAULT);
     gsLoadSE(Se_WeaponEnemy, "Assets/Sound/weapon_enemy.wav", 5, GWAVE_DEFAULT);
-
-
 
     gsLoadMesh(Mesh_Player, "Assets/Model/vehicle_playerShip.msh");
     gsLoadMesh(Mesh_Asteroid01, "Assets/Model/prop_asteroid_01.msh");
@@ -59,14 +58,17 @@ void GamePlayScene::start()
     // 敵生成クラスの追加
     world_.add_actor(new EnemyGenerator{ &world_, "Stage01.csv" });
 
-   
-
+    world_.add_actor(new DamageAssets{ &world_, GSvector3{0.0f,-190.0f,0.0f} });
+    //world_.add_actor(new DamageAssets{ &world_, GSvector3{-60.0f,-190.0f,0.0f} });
+    //world_.add_actor(new DamageAssets{ &world_, GSvector3{60.0f,-190.0f,0.0f} });
 }
 
 void GamePlayScene::update(float delta_time)
 {
     // ワールドクラスの更新
     world_.update(delta_time);
+
+    
 }
 
 void GamePlayScene::draw() const
@@ -77,7 +79,10 @@ void GamePlayScene::draw() const
     const static GSvector2 position_Base{ 1.0f, 700.0f };
     
     gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
+
 }
+
+
 
 bool GamePlayScene::is_end() const
 {
@@ -97,7 +102,7 @@ std::string GamePlayScene::next() const
     {
         return "GameOverScene";
     }
-
+    //return "TitleScene";
 }
 
 void GamePlayScene::end()
@@ -109,6 +114,7 @@ void GamePlayScene::end()
     gsDeleteMesh(Mesh_Asteroid01);
     // テクスチャの削除
     gsDeleteTexture(Texture_BgTileNebulaGreen);
+
     gsDeleteTexture(TextureBase);
     // 効果音の削除
     gsDeleteSE(Se_ExplosionPlayer);
@@ -118,5 +124,7 @@ void GamePlayScene::end()
     gsDeleteSE(Se_WeaponEnemy);
     // BGMの削除
     gsDeleteMusic(Music_BackGround);
+
+    //gsDeleteTexture(TextureBase);
 
 }

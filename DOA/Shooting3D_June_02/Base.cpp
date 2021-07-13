@@ -1,14 +1,13 @@
 #include "Base.h"
 #include "Assets.h"
-
+#include "IWorld.h"
+#include "Field.h"
+#include "Actor.h"
 
 // コンストラクタ
-Base::Base(IWorld* world, const GSvector3& position) {
+Base::Base(IWorld* world, const GSvector3& position){
     world_ = world;
-    name_ = "Base";
-    tag_ = "BaseTag";
     transform_.position(position);
-    collider_ = BoundingSphere{ 100.0f };
 }
 
 // 更新
@@ -26,9 +25,9 @@ void Base::draw() const {
 }
 
 // 衝突処理
-void Base::react(Actor& other) {
+void Base::under_over(Actor& other) const{
     // 敵と衝突した場合は死亡
-    if (other.tag() == "EnemyTag") {
-        die();
+    if (world_->field()->is_over(transform_.position())) {
+
     }
 }

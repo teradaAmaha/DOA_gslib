@@ -29,6 +29,8 @@ public:
     virtual void game_over() = 0;
     // ゲームクリア
     virtual void game_clear() = 0;
+    //hpの減算
+    //virtual void sub_hp(int hp) = 0;
     // フィールドの取得
     virtual Field* field() = 0;
     // カメラの取得

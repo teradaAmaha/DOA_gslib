@@ -5,8 +5,11 @@
 #include <GStransform.h>
 #include <string>
 #include "BoundingSphere.h"
-
+#include "Field.h"
+#include "GamePlayScene.h"
 class IWorld;
+
+//GamePlayScene g;
 
 class Actor {
 public:
@@ -26,6 +29,8 @@ public:
     virtual void draw_gui() const;
     // 衝突リアクション
     virtual void react(Actor & other);
+    //すり抜けたら
+    virtual void over() const;
     // メッセージ処理
     virtual void handle_message(const std::string & message, void* param);
     // 衝突判定
@@ -49,6 +54,7 @@ public:
     // 衝突判定データを取得
     BoundingSphere collider() const;
 
+    
     // コピー禁止
     Actor(const Actor & other) = delete;
     Actor& operator = (const Actor & other) = delete;
