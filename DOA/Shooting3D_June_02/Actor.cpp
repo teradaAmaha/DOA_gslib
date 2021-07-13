@@ -18,6 +18,8 @@ void Actor::draw_gui() const {}
 // 衝突リアクション
 void Actor::react(Actor&) {}
 
+void Actor::over() const {}
+
 // メッセージ処理
 void Actor::handle_message(const std::string& message, void* param) {}
 

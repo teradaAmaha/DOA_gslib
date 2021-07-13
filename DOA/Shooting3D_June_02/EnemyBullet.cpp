@@ -2,6 +2,7 @@
 #include "IWorld.h"
 #include "Field.h"
 #include "Assets.h"
+#include "GamePlayScene.h"
 
 // コンストラクタ
 EnemyBullet::EnemyBullet(IWorld* world, const GSvector3& position, const GSvector3& velocity) {
@@ -20,6 +21,9 @@ void EnemyBullet::update(float delta_time) {
     // エリア外に移動したら死亡させる
     if (world_->field()->is_outside(transform_.position())) {
         die();
+    }
+    if (world_->field()->is_over(transform_.position())) {
+        
     }
 }
 

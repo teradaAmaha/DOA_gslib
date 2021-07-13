@@ -4,6 +4,7 @@
 #include"IScene.h"
 #include "World.h"
 
+
 // ゲームプレイシーン
 class GamePlayScene : public IScene {
 public:
@@ -23,11 +24,8 @@ public:
 private:
     // ワールドクラス
     World   world_;
-
     // 終了フラグ
     bool is_end_{ false };
-
-    //bool die{ false };
 };
 
 #endif

@@ -59,21 +59,19 @@ void World::add_light(Actor* light) {
     light_ = light;
 }
 
+void World::life() {
+    
+}
 // ゲームオーバー
 void World::game_over() {
     is_game_over_ = true;
-    //ゲームオーバーした時の処理をつなげる下のように
-    /*timer_.clear();
-    baselife.clear();*/
+    
 }
 
 // ゲームクリアー
 void World::game_clear() {
     is_game_clear_ = true;
-    //ゲームオーバーした時の処理をつなげる下のように
-    //timer_.clear();
-    //// Life.clear();
-    //baselife.clear();
+    
 }
 
 // ゲームオーバーか？
@@ -150,4 +148,8 @@ Actor* World::light() {
 Field* World::field() {
     return field_;
 }
+
+
+
+
 

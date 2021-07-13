@@ -28,6 +28,7 @@ void EnemyGenerator::update(float delta_time) {
     }
     // 出現タイマの更新
     timer_ += delta_time;
+
 }
 
 // 生成

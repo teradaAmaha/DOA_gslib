@@ -7,13 +7,15 @@
 #include "Light.h"
 #include "Camera.h"
 #include "Field.h"
-#include "World.h"
+#include "DamageAssets.h"
 #include "Enemy.h"
 #include "EnemyGenerator.h"
 
 World world_;
+
 void GamePlayScene::start()
 {
+ 
     gsLoadMesh(Mesh_Player, "Assets/Model/vehicle_playerShip.msh");
     gsLoadMesh(Mesh_Asteroid01, "Assets/Model/prop_asteroid_01.msh");
     // 背景用画像の読み込み
@@ -36,14 +38,17 @@ void GamePlayScene::start()
     // 敵生成クラスの追加
     world_.add_actor(new EnemyGenerator{ &world_, "Stage01.csv" });
 
-   
-
+    world_.add_actor(new DamageAssets{ &world_, GSvector3{0.0f,-190.0f,0.0f} });
+    //world_.add_actor(new DamageAssets{ &world_, GSvector3{-60.0f,-190.0f,0.0f} });
+    //world_.add_actor(new DamageAssets{ &world_, GSvector3{60.0f,-190.0f,0.0f} });
 }
 
 void GamePlayScene::update(float delta_time)
 {
     // ワールドクラスの更新
     world_.update(delta_time);
+
+    
 }
 
 void GamePlayScene::draw() const
@@ -51,10 +56,9 @@ void GamePlayScene::draw() const
     // ワールドクラスの描画
     world_.draw();
 
-    const static GSvector2 position_Base{ 1.0f, 450.0f };
-    
-    gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
 }
+
+
 
 bool GamePlayScene::is_end() const
 {
@@ -74,7 +78,7 @@ std::string GamePlayScene::next() const
     {
         return "GameOverScene";
     }
-
+    //return "TitleScene";
 }
 
 void GamePlayScene::end()
@@ -86,5 +90,5 @@ void GamePlayScene::end()
     gsDeleteMesh(Mesh_Asteroid01);
     // テクスチャの削除
     gsDeleteTexture(Texture_BgTileNebulaGreen);
-    gsDeleteTexture(TextureBase);
+    //gsDeleteTexture(TextureBase);
 }

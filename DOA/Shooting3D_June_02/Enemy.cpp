@@ -2,7 +2,8 @@
 #include "IWorld.h"
 #include "Assets.h"
 #include "Field.h"
-//#include "EnemyBullet.h"
+#include "EnemyBullet.h"
+#include "GamePlayScene.h"
 
 // コンストラクタ
 Enemy::Enemy(IWorld* world, const GSvector3& position) {
@@ -37,13 +38,13 @@ void Enemy::update(float delta_time) {
     // 移動する（ワールド座標系基準）
     transform_.translate(velocity_ * delta_time, GStransform::Space::World);
 
-    //// ランダムな間隔で弾を発射
-    //if (shooting_timer_ <= 0.0f) {
-    //    world_->add_actor(
-    //        new EnemyBullet{ world_, transform_.position(), GSvector3{0.0f, -4.0f, 0.0f}});
-    //    shooting_timer_ = gsRandf(20.0f, 60.0f); // 20～60の乱数を求める
-    //}
-    //shooting_timer_ -= delta_time; // 発射タイマの更新
+    // ランダムな間隔で弾を発射
+    if (shooting_timer_ <= 0.0f) {
+        world_->add_actor(
+            new EnemyBullet{ world_, transform_.position(), GSvector3{0.0f, -4.0f, 0.0f}});
+        shooting_timer_ = gsRandf(20.0f, 60.0f); // 20～60の乱数を求める
+    }
+    shooting_timer_ -= delta_time; // 発射タイマの更新
 
     // 画面外であれば死亡
     if (world_->field()->is_outside(transform_.position())) {
@@ -63,5 +64,11 @@ void Enemy::draw() const {
 void Enemy::react(Actor& other) {
     if (other.tag() == "PlayerTag" || other.tag() == "PlayerBulletTag") {
         die();
+    }
+}
+
+void Enemy::over() const {
+    if (world_->field()->is_over(transform_.position())) {
+       // world_->
     }
 }

@@ -65,7 +65,5 @@ void Player::draw() const {
 // Õ“Ëˆ—
 void Player::react(Actor& other) {
     // “G‚ÆÕ“Ë‚µ‚½ê‡‚Í€–S
-    if (other.tag() == "EnemyTag") {
-        die();
-    }
+  
 }
