@@ -54,73 +54,72 @@ void Player::update(float delta_time) {
         timer_++;
     }
 
-<<<<<<< HEAD
+
     if (isItem == true)
     {//カウントしておく
         timer_++;
     }
+   
     //自機発射
-    if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
+        if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
 
-        if (isItem == true )
-        { 
-            //++timer_;
-=======
-    //自機発射
-    if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
+           if (isItem == true)
+           { //カウントしておく
 
-        if (isItem == true)
-        { //カウントしておく
-            
->>>>>>> origin/master
-            world_->add_actor(
-                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-            world_->add_actor(
-                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f+angle_2, 4.0f, 0.0f }));
-            world_->add_actor(
-<<<<<<< HEAD
-                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
-            gsPlaySE(Se_WeaponPlayer);
-            if (timer_ >= 90) {
-=======
-                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f+angle_1, 4.0f, 0.0f }));
-            if (timer_ > 360) {
->>>>>>> origin/master
-                timer_ = 0; 
-                isItem = false;
+
+           world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+                    world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
+                    world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
+                    gsPlaySE(Se_WeaponPlayer);
+                    if (timer_ >= 90) {
+
+                        new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f });
+                        if (timer_ > 360) {
+
+                            timer_ = 0;
+                            isItem = false;
+                        }
+                    }
+                    else if (isItem == false)
+                    {
+                        world_->add_actor(
+                            new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+                        // ショット音を再生
+                        gsPlaySE(Se_WeaponPlayer);
+                    }
+                }
+           else if (isItem == false)
+           {
+               world_->add_actor(
+                   new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+               // ショット音を再生
+               gsPlaySE(Se_WeaponPlayer);
+           }
             }
+    
         }
-        else if (isItem == false)
-        {
-            world_->add_actor(
-                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-            // ショット音を再生
-            gsPlaySE(Se_WeaponPlayer);
-        }
-    }
-
-}
-
-// 描画
-void Player::draw() const {
+        
+            // 描画
+    void Player::draw() const {
     glPushMatrix();
     glMultMatrixf(transform_.localToWorldMatrix());
     gsDrawMesh(Mesh_Player);
     glPopMatrix();
-}
-
-// 衝突処理
-void Player::react(Actor& other) {
-    // 敵と衝突した場合は死亡
-
-    if (other.tag() == "EnemyTag") {
-        die();
-        // 爆発音を再生
-        gsPlaySE(Se_ExplosionPlayer);
-    }
-    // 敵と衝突した場合は死亡
-    if (other.tag() == "ItemTag") {
-        isItem = true;
     }
 
-}
+            // 衝突処理
+            void Player::react(Actor & other) {
+                // 敵と衝突した場合は死亡
+
+                if (other.tag() == "EnemyTag") {
+                    die();
+                    // 爆発音を再生
+                    gsPlaySE(Se_ExplosionPlayer);
+                }
+                // 敵と衝突した場合は死亡
+                if (other.tag() == "ItemTag") {
+                    isItem = true;
+                }
+
+            }
+      
