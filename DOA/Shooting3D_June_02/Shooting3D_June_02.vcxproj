@@ -163,9 +163,11 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NumberTexture.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBullet.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -192,10 +194,12 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="NumberTexture.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBullet.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneNull.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="TiltleScene.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="World.h" />

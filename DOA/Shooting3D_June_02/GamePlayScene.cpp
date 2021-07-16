@@ -62,7 +62,11 @@ void GamePlayScene::start()
     world_.add_actor(new DamageAssets{ &world_, GSvector3{0.0f,-190.0f,0.0f} });
     //world_.add_actor(new DamageAssets{ &world_, GSvector3{-60.0f,-190.0f,0.0f} });
     //world_.add_actor(new DamageAssets{ &world_, GSvector3{60.0f,-190.0f,0.0f} });
+
+    gsLoadTexture(TextureNumber, "Assets/NUM.png");
+
     world_.add_actor(new Bomboss{ &world_, GSvector3{30.0f,120.0f,0.0f} });
+
 }
 
 void GamePlayScene::update(float delta_time)

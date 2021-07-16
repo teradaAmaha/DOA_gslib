@@ -39,6 +39,8 @@ void World::draw() const {
     actors_.draw_transparent();
     // GUIの描画
     actors_.draw_gui();
+    // スコアの描画
+    score_.draw();
 }
 
 // フィールドの追加
@@ -147,6 +149,11 @@ Actor* World::light() {
 // フィールドの取得
 Field* World::field() {
     return field_;
+}
+
+// スコアの加算
+void World::add_score(int score) {
+    score_.add(score);
 }
 
 

@@ -54,15 +54,19 @@ void Player::update(float delta_time) {
         timer_++;
     }
 
+<<<<<<< HEAD
 
     if (isItem == true)
     {//カウントしておく
         timer_++;
     }
    
+=======
+>>>>>>> origin/master
     //自機発射
         if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
 
+<<<<<<< HEAD
            if (isItem == true)
            { //カウントしておく
 
@@ -75,6 +79,24 @@ void Player::update(float delta_time) {
 
                         new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f });
                         if (timer_ > 360) {
+            world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+            world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f+angle_2, 4.0f, 0.0f }));
+            world_->add_actor( new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f+angle_1, 4.0f, 0.0f }));
+            if (timer_ > 360) {
+                timer_ = 0; 
+                isItem = false;
+            }
+        }
+        else if (isItem == false)
+        {
+            world_->add_actor(
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+            // ショット音を再生
+            gsPlaySE(Se_WeaponPlayer);
+        }
+  }
+
+
 
                             timer_ = 0;
                             isItem = false;

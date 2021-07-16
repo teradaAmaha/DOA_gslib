@@ -64,6 +64,7 @@ void Enemy::draw() const {
 void Enemy::react(Actor& other) {
     if (other.tag() == "PlayerTag" || other.tag() == "PlayerBulletTag") {
         die();
+        world_->add_score(100);
     }
 }
 

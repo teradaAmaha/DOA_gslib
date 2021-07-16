@@ -3,6 +3,7 @@
 
 #include "IWorld.h"
 #include "ActorManager.h"
+#include "Score.h"
 
 
 
@@ -61,6 +62,8 @@ public:
     // ゲームクリアか？
     bool is_game_clear() const;
 
+    // スコアの加算
+    virtual void add_score(int score) override;
 
     // コピー禁止
     World(const World& other) = delete;
@@ -75,6 +78,8 @@ private:
     Actor* camera_{ nullptr };
     // フィールド
     Field* field_{ nullptr };
+    // スコア
+    Score		score_;
     //
      //GamePlayScene game;
      // ゲームオーバーか？
