@@ -54,19 +54,38 @@ void Player::update(float delta_time) {
         timer_++;
     }
 
+<<<<<<< HEAD
+    if (isItem == true)
+    {//カウントしておく
+        timer_++;
+    }
+    //自機発射
+    if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
+
+        if (isItem == true )
+        { 
+            //++timer_;
+=======
     //自機発射
     if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
 
         if (isItem == true)
         { //カウントしておく
             
+>>>>>>> origin/master
             world_->add_actor(
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
             world_->add_actor(
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f+angle_2, 4.0f, 0.0f }));
             world_->add_actor(
+<<<<<<< HEAD
+                new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
+            gsPlaySE(Se_WeaponPlayer);
+            if (timer_ >= 90) {
+=======
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f+angle_1, 4.0f, 0.0f }));
             if (timer_ > 360) {
+>>>>>>> origin/master
                 timer_ = 0; 
                 isItem = false;
             }

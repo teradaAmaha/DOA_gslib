@@ -24,6 +24,10 @@ private:
     int asteroid{ 0 };
 
     float life{ 10.0f };
+
+    float timer{ 0.0f };
+
+    float xR{ 90.0f };
 };
 
 #endif
