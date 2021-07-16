@@ -18,6 +18,8 @@ public:
 private:
     bool isItem = false;
     int timer_ = 0;
+    float angle_1 = 0.01;
+    float angle_2 = -0.01;
 };
 
 
