@@ -18,6 +18,7 @@ enum
 	TextureTitleBG,
 	TextureTitleLogo,
 	TextureBase,
+	TextureNumber,       
 
 	//3Dスプライト
 	Texture_EffectLazerCyan,

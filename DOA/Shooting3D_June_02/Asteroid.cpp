@@ -40,9 +40,11 @@ void Asteroid::draw() const {
 void Asteroid::react(Actor& other) {
     if (other.tag() == "PlayerTag") {
         die();
+        world_->add_score(100);
     }
     if (other.tag() == "DamageTag")
     {
         die();
+        world_->add_score(100);
     }
 }

@@ -88,9 +88,6 @@ void Player::draw() const {
 // Õ“Ëˆ—
 void Player::react(Actor& other) {
     // “G‚ÆÕ“Ë‚µ‚½ê‡‚Í€–S
-<<<<<<< HEAD
-  
-=======
     if (other.tag() == "EnemyTag") {
         die();
         // ”š”­‰¹‚ğÄ¶
@@ -100,5 +97,4 @@ void Player::react(Actor& other) {
     if (other.tag() == "ItemTag") {
         isItem = true;
     }
->>>>>>> 1d43e4cf58ca6df486ab7c205fa613e1d8afda96
 }
