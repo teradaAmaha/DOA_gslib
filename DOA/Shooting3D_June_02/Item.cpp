@@ -13,7 +13,7 @@ Item::Item(IWorld* world, const GSvector3& position,const GSvector3& velocity) {
     tag_ = "ItemTag";
     transform_.position(position);
     velocity_ = velocity;
-    collider_ = BoundingSphere{ 8.0f };
+    collider_ = BoundingSphere{ 25.0f };
 }
 
 // çXêV
@@ -32,6 +32,7 @@ void Item::update(float delta_time) {
 void Item::draw() const {
     glPushMatrix();
     glMultMatrixf(transform_.localToWorldMatrix());
+    //glScalef(7.5f, 7.5f, 7.5f);
     gsDrawMesh(Mesh_Item);
     glPopMatrix();
 }

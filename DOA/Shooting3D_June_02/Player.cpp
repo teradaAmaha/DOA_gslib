@@ -48,20 +48,24 @@ void Player::update(float delta_time) {
     // 座標の設定
     transform_.position(position);
 
-   
+    if (isItem == true)
+    {//カウントしておく
+        timer_++;
+    }
     //自機発射
     if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
 
-        if (isItem == true)
-        { //カウントしておく
-            timer_++;
+        if (isItem == true )
+        { 
+            //++timer_;
             world_->add_actor(
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
             world_->add_actor(
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 6.0f, 0.0f }));
             world_->add_actor(
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
-            if (timer_ > 60) {
+            gsPlaySE(Se_WeaponPlayer);
+            if (timer_ >= 90) {
                 timer_ = 0; 
                 isItem = false;
             }

@@ -11,6 +11,7 @@
 #include "Enemy.h"
 #include "EnemyGenerator.h"
 #include"Item.h"
+#include "Bomboss.h"
 #include <GSmusic.h>
 
 World world_;
@@ -43,7 +44,7 @@ void GamePlayScene::start()
     gsLoadMesh(Mesh_Enemy, "Assets/Model/vehicle_enemyShip.msh");
     gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
     // アイテムの読み込み
-        gsLoadMesh(Mesh_Item, "Assets/Model/06_UFO_.msh");
+        gsLoadMesh(Mesh_Item, "Assets/Model/item.msh");
     // フィールドの追加
     world_.add_field(new Field{ Texture_BgTileNebulaGreen });
     // カメラの追加
@@ -61,6 +62,7 @@ void GamePlayScene::start()
     world_.add_actor(new DamageAssets{ &world_, GSvector3{0.0f,-190.0f,0.0f} });
     //world_.add_actor(new DamageAssets{ &world_, GSvector3{-60.0f,-190.0f,0.0f} });
     //world_.add_actor(new DamageAssets{ &world_, GSvector3{60.0f,-190.0f,0.0f} });
+    world_.add_actor(new Bomboss{ &world_, GSvector3{30.0f,120.0f,0.0f} });
 }
 
 void GamePlayScene::update(float delta_time)
