@@ -75,6 +75,8 @@ void Player::update(float delta_time) {
         {
             world_->add_actor(
                 new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+            // ƒVƒ‡ƒbƒg‰¹‚ğÄ¶
+            gsPlaySE(Se_WeaponPlayer);
         }
     }
 
@@ -91,11 +93,15 @@ void Player::draw() const {
 // Õ“Ëˆ—
 void Player::react(Actor& other) {
     // “G‚ÆÕ“Ë‚µ‚½ê‡‚Í€–S
+
     if (other.tag() == "EnemyTag") {
         die();
+        // ”š”­‰¹‚ğÄ¶
+        gsPlaySE(Se_ExplosionPlayer);
     }
     // “G‚ÆÕ“Ë‚µ‚½ê‡‚Í€–S
     if (other.tag() == "ItemTag") {
         isItem = true;
     }
+
 }

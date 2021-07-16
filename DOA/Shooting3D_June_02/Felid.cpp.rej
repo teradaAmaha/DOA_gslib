@@ -1,0 +1,9 @@
+diff a/DOA/Shooting3D_June_02/Felid.cpp b/DOA/Shooting3D_June_02/Felid.cpp	(rejected hunks)
+@@ -20,6 +20,7 @@
+ // �`��
+ void Field::draw() const {
+     // �w�i�摜�̕`��
++<<<<<<< HEAD
+     const GSrect src_rect{ 0.0f, scroll_, SizeX, SizeY + scroll_ };
+ =======
+     const GSrect src_rect{ 0.0f, scroll_, 1280.0f, 720.0f + scroll_ };

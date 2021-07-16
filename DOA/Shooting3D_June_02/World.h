@@ -4,6 +4,8 @@
 #include "IWorld.h"
 #include "ActorManager.h"
 
+
+
 // ワールドクラス
 class World : public IWorld {
 public:
@@ -24,6 +26,8 @@ public:
     // フィールドの追加
     void add_field(Field* field);
 
+    void life();
+
     // アクターを追加
     virtual void add_actor(Actor* actor) override;
     // アクターの検索
@@ -36,6 +40,8 @@ public:
     virtual int count_actor_with_tag(const std::string& tag) const override;
     // メッセージの送信
     virtual void send_message(const std::string& message, void* param = nullptr) override;
+    //hpの減算
+    //virtual void sub_hp(int hp) override;
 
     // カメラの取得
     virtual Actor* camera() override;
@@ -43,7 +49,8 @@ public:
     virtual Actor* light() override;
     // フィールドの取得
     virtual Field* field() override;
-
+    //ベース
+    //virtual Base* base() override;
     // ゲームオーバー
     virtual void game_over() override;
     // ゲームクリア
@@ -68,8 +75,9 @@ private:
     Actor* camera_{ nullptr };
     // フィールド
     Field* field_{ nullptr };
-
-    // ゲームオーバーか？
+    //
+     //GamePlayScene game;
+     // ゲームオーバーか？
     bool            is_game_over_{ false };
     // ゲームクリアか？
     bool            is_game_clear_{ false };

@@ -11,6 +11,7 @@
 #include"TitleScene.h"
 #include "GamePlayScene.h"
 #include "Enemy.h"
+#include "GameOverScene.h"
 
 
 // ゲームクラス
@@ -28,6 +29,8 @@ public:
         scene_manager_.add("TitleScene", new TitleScene());
         // ゲームプレイシーンの追加
         scene_manager_.add("GamePlayScene", new GamePlayScene());
+
+        scene_manager_.add("GameOverScene", new GameOverScene());
 
         // タイトルシーンから開始
         scene_manager_.change("TitleScene");

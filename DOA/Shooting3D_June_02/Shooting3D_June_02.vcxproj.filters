@@ -21,7 +21,11 @@
     <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="CSVReader.cpp" />
     <ClCompile Include="EnemyGenerator.cpp" />
+    <ClCompile Include="DamageAssets.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Bomboss.cpp" />
+    <ClCompile Include="BomExplosion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -43,11 +47,15 @@
     <ClInclude Include="SceneNull.h" />
     <ClInclude Include="TiltleScene.h" />
     <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="World.h" />
     <ClInclude Include="BoundingLine.h" />
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="CSVReader.h" />
     <ClInclude Include="EnemyGenerator.h" />
+    <ClInclude Include="DamageAssets.h" />
+    <ClInclude Include="GameOverScene.h" />
+    <ClInclude Include="World.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Bomboss.h" />
+    <ClInclude Include="BomExplosion.h" />
   </ItemGroup>
 </Project>

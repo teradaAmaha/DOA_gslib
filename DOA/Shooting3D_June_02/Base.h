@@ -3,17 +3,22 @@
 
 #include "Actor.h"
 
+class IWorld;
 // プレーヤ
-class Base : public Actor {
+class Base{
 public:
     // コンストラクタ
     Base(IWorld* world, const GSvector3& position);
     // 更新
-    virtual void update(float delta_time) override;
+    void update(float delta_time);
     // 描画
-    virtual void draw() const override;
+    void draw() const ;
     // 衝突処理
-    virtual void react(Actor& other) override;
+    void under_over(Actor& other) const;
+protected:
+    IWorld* world_{ nullptr };
+
+    GStransform transform_;
 };
 
 

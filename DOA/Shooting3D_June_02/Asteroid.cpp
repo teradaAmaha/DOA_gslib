@@ -18,12 +18,14 @@ void Asteroid::update(float delta_time) {
     // ‰ñ“]‚³‚¹‚é
     transform_.rotate(2.0f, 0.0f, 0.5f);
     // ˆÚ“®‚·‚éiƒ[ƒ‹ƒhÀ•WŒn‚ğŠî€‚ÉˆÚ“®j
+
     transform_.translate(velocity_ * delta_time, GStransform::Space::World);
 
     if (world_->field()->is_outside(transform_.position())) {
+       //world_->sub_hp(2);
         die();
+     
     }
-
 }
 
 // •`‰æ
@@ -36,10 +38,11 @@ void Asteroid::draw() const {
 
 // Õ“Ëˆ—
 void Asteroid::react(Actor& other) {
-    if (other.tag() == "PlayerTag") {
+    if (other.tag() == "PlayerTag"|| other.tag() == "PlayerBulletTag") {
         die();
     }
-    if (other.tag() == "BaseTag") {
+    if (other.tag() == "DamageTag")
+    {
         die();
     }
 }
