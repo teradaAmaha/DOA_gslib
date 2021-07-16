@@ -11,12 +11,26 @@
 #include "Enemy.h"
 #include "EnemyGenerator.h"
 #include"Item.h"
+#include <GSmusic.h>
 
 World world_;
 
 void GamePlayScene::start()
 {
- 
+    // BGMの読み込み (GS_TRUEでループ再生）
+    gsLoadMusic(Music_BackGround, "Assets/Sound/music_background.wav", GS_TRUE);
+    // BGMのバインド
+    gsBindMusic(Music_BackGround);
+    // BGMの再生
+    gsPlayMusic();
+    // 効果音ファイルの読み込み
+    gsLoadSE(Se_ExplosionPlayer, "Assets/Sound/explosion_player.wav", 1, GWAVE_DEFAULT);
+    gsLoadSE(Se_ExplosionEnemy, "Assets/Sound/explosion_enemy.wav", 1, GWAVE_DEFAULT);
+    gsLoadSE(Se_ExplosionAsteroid,
+        "Assets/Sound/explosion_asteroid.wav", 1, GWAVE_DEFAULT);
+    gsLoadSE(Se_WeaponPlayer, "Assets/Sound/weapon_player.wav", 5, GWAVE_DEFAULT);
+    gsLoadSE(Se_WeaponEnemy, "Assets/Sound/weapon_enemy.wav", 5, GWAVE_DEFAULT);
+
     gsLoadMesh(Mesh_Player, "Assets/Model/vehicle_playerShip.msh");
     gsLoadMesh(Mesh_Asteroid01, "Assets/Model/prop_asteroid_01.msh");
     // 背景用画像の読み込み
@@ -62,6 +76,10 @@ void GamePlayScene::draw() const
     // ワールドクラスの描画
     world_.draw();
 
+    const static GSvector2 position_Base{ 1.0f, 700.0f };
+    
+    gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
+
 }
 
 
@@ -96,5 +114,17 @@ void GamePlayScene::end()
     gsDeleteMesh(Mesh_Asteroid01);
     // テクスチャの削除
     gsDeleteTexture(Texture_BgTileNebulaGreen);
+
+    gsDeleteTexture(TextureBase);
+    // 効果音の削除
+    gsDeleteSE(Se_ExplosionPlayer);
+    gsDeleteSE(Se_ExplosionEnemy);
+    gsDeleteSE(Se_ExplosionAsteroid);
+    gsDeleteSE(Se_WeaponPlayer);
+    gsDeleteSE(Se_WeaponEnemy);
+    // BGMの削除
+    gsDeleteMusic(Music_BackGround);
+
     //gsDeleteTexture(TextureBase);
+
 }
