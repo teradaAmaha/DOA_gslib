@@ -24,6 +24,8 @@
     <ClCompile Include="DamageAssets.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Bomboss.cpp" />
+    <ClCompile Include="BomExplosion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -53,5 +55,7 @@
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Bomboss.h" />
+    <ClInclude Include="BomExplosion.h" />
   </ItemGroup>
 </Project>

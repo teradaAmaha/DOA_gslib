@@ -38,7 +38,7 @@ void Asteroid::draw() const {
 
 // Õ“Ëˆ—
 void Asteroid::react(Actor& other) {
-    if (other.tag() == "PlayerTag") {
+    if (other.tag() == "PlayerTag"|| other.tag() == "PlayerBulletTag") {
         die();
     }
     if (other.tag() == "DamageTag")
