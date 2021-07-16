@@ -147,6 +147,8 @@
     <ClCompile Include="ActorManager.cpp" />
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="Base.cpp" />
+    <ClCompile Include="Bomboss.cpp" />
+    <ClCompile Include="BomExplosion.cpp" />
     <ClCompile Include="BoundingLine.cpp" />
     <ClCompile Include="BoundingSphere.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -175,6 +177,8 @@
     <ClInclude Include="Assets.h" />
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="Base.h" />
+    <ClInclude Include="Bomboss.h" />
+    <ClInclude Include="BomExplosion.h" />
     <ClInclude Include="BoundingLine.h" />
     <ClInclude Include="BoundingSphere.h" />
     <ClInclude Include="Camera.h" />

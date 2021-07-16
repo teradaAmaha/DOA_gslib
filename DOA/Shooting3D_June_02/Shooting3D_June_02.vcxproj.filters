@@ -24,8 +24,13 @@
     <ClCompile Include="DamageAssets.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Item.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="NumberTexture.cpp" />
     <ClCompile Include="Score.cpp" />
+=======
+    <ClCompile Include="Bomboss.cpp" />
+    <ClCompile Include="BomExplosion.cpp" />
+>>>>>>> 10eb06a22ed42ee4da363ccae392b1aaa43e79f7
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -55,7 +60,12 @@
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Item.h" />
+<<<<<<< HEAD
     <ClInclude Include="NumberTexture.h" />
     <ClInclude Include="Score.h" />
+=======
+    <ClInclude Include="Bomboss.h" />
+    <ClInclude Include="BomExplosion.h" />
+>>>>>>> 10eb06a22ed42ee4da363ccae392b1aaa43e79f7
   </ItemGroup>
 </Project>
