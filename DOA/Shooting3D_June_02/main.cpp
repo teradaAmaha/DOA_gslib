@@ -12,7 +12,7 @@
 #include "GamePlayScene.h"
 #include "Enemy.h"
 #include "GameOverScene.h"
-
+#include "GameClearScene.h"
 
 // ゲームクラス
 class MyGame : public gslib::Game {
@@ -31,6 +31,8 @@ public:
         scene_manager_.add("GamePlayScene", new GamePlayScene());
 
         scene_manager_.add("GameOverScene", new GameOverScene());
+
+        scene_manager_.add("GameClearScene", new GameClearScene());
 
         // タイトルシーンから開始
         scene_manager_.change("TitleScene");

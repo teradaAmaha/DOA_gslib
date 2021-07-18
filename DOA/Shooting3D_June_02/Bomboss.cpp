@@ -9,7 +9,7 @@
 Bomboss::Bomboss(IWorld* world, const GSvector3& position)
 {
     world_ = world;
-    name_ = "MyEnemy";
+    name_ = "Bomboss";
     tag_ = "EnemyTag";
     velocity_ = GSvector3{ 0.0f, -1.0f, 0.0f };
     collider_ = BoundingSphere{ 5.0f };

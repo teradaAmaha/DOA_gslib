@@ -37,6 +37,7 @@ enum {
 	Se_ExplosionEnemy,
 	Se_ExplosionAsteroid,
 	Se_WeaponPlayer,
-	Se_WeaponEnemy
+	Se_WeaponEnemy,
+	Se_WeaponChange
 };
 #endif

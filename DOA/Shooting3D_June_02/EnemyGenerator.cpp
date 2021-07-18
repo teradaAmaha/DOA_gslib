@@ -2,6 +2,7 @@
 #include "IWorld.h"
 #include "Enemy.h"
 #include "Asteroid.h"
+#include "Bomboss.h"
 
 const int CsvTime{ 0 };	// タイマの列
 const int CsvName{ 1 };	// 名前の列
@@ -53,6 +54,11 @@ void EnemyGenerator::generate() {
             csv_.getf(current_row_, CsvVelocity + 2) };
         // 隕石の生成
         world_->add_actor(new Asteroid{ world_, position, velocity });
+    }
+    else if (name == "Bomboss")
+    {
+        // 座標を取得
+        world_->add_actor(new Bomboss{ world_, position });
     }
 }
 

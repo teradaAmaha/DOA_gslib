@@ -27,10 +27,10 @@ void GamePlayScene::start()
     // 効果音ファイルの読み込み
     gsLoadSE(Se_ExplosionPlayer, "Assets/Sound/explosion_player.wav", 1, GWAVE_DEFAULT);
     gsLoadSE(Se_ExplosionEnemy, "Assets/Sound/explosion_enemy.wav", 1, GWAVE_DEFAULT);
-    gsLoadSE(Se_ExplosionAsteroid,
-        "Assets/Sound/explosion_asteroid.wav", 1, GWAVE_DEFAULT);
-    gsLoadSE(Se_WeaponPlayer, "Assets/Sound/weapon_player.wav", 5, GWAVE_DEFAULT);
+    gsLoadSE(Se_ExplosionAsteroid, "Assets/Sound/explosion_asteroid.wav", 1, GWAVE_DEFAULT);
+    gsLoadSE(Se_WeaponPlayer, "Assets/Sound/nc25721.wav", 5, GWAVE_DEFAULT);
     gsLoadSE(Se_WeaponEnemy, "Assets/Sound/weapon_enemy.wav", 5, GWAVE_DEFAULT);
+    gsLoadSE(Se_WeaponChange, "Assets/Sound/nc40282.wav", 5, GWAVE_DEFAULT);
 
     gsLoadMesh(Mesh_Player, "Assets/Model/vehicle_playerShip.msh");
     gsLoadMesh(Mesh_Asteroid01, "Assets/Model/prop_asteroid_01.msh");
@@ -41,10 +41,12 @@ void GamePlayScene::start()
     // 敵弾画像を読み込み
     gsLoadTexture(Texture_EffectLazerCyan, "Assets/Effect/fx_lazer_cyan_dff.png");
     // 敵メッシュの読み込み
-    gsLoadMesh(Mesh_Enemy, "Assets/Model/vehicle_enemyShip.msh");
-    gsLoadTexture(TextureBase, "Assets/2DSprite/base.png");
+    gsLoadMesh(Mesh_Enemy, "Assets/Model/item.msh");
     // アイテムの読み込み
-        gsLoadMesh(Mesh_Item, "Assets/Model/item.msh");
+    gsLoadMesh(Mesh_Item, "Assets/Model/item.msh");
+
+
+
     // フィールドの追加
     world_.add_field(new Field{ Texture_BgTileNebulaGreen });
     // カメラの追加
@@ -60,12 +62,6 @@ void GamePlayScene::start()
     world_.add_actor(new EnemyGenerator{ &world_, "Stage01.csv" });
 
     world_.add_actor(new DamageAssets{ &world_, GSvector3{0.0f,-190.0f,0.0f} });
-    //world_.add_actor(new DamageAssets{ &world_, GSvector3{-60.0f,-190.0f,0.0f} });
-    //world_.add_actor(new DamageAssets{ &world_, GSvector3{60.0f,-190.0f,0.0f} });
-
-    gsLoadTexture(TextureNumber, "Assets/NUM.png");
-
-    world_.add_actor(new Bomboss{ &world_, GSvector3{30.0f,120.0f,0.0f} });
 
 }
 
@@ -81,10 +77,6 @@ void GamePlayScene::draw() const
 {
     // ワールドクラスの描画
     world_.draw();
-
-    const static GSvector2 position_Base{ 1.0f, 700.0f };
-    
-    gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
 
 }
 

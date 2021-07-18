@@ -21,7 +21,7 @@ void Base::update(float delta_time) {
 void Base::draw() const {
     const static GSvector2 position_Base{ 1.0f, 1.0f };
 
-    gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
+    //gsDrawSprite2D(TextureBase, &position_Base, NULL, NULL, NULL, NULL, 0.0f);
 }
 
 // è’ìÀèàóù
