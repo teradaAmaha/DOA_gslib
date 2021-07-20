@@ -21,6 +21,8 @@ private:
     // ショット用タイマ
     float shooting_timer_{ 0.0f };
 
+    float	motion_timer_{ 0.0f };
+
     int asteroid{ 0 };
 
     float life{ 10.0f };

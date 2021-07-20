@@ -37,7 +37,7 @@ void Bomboss::update(float delta_time)
     }
     else
     {
-        transform_.eulerAngles(90.0f, 0.0f, 0.0f);
+        //transform_.eulerAngles(90.0f, 0.0f, 0.0f);
         //transform_.rotate(2.0f, 0.0f, 0.5f);
         velocity_.y = -0.5;
        // transform_.translate(velocity_ * delta_time, GStransform::Space::World);
@@ -47,13 +47,17 @@ void Bomboss::update(float delta_time)
     if (world_->field()->is_outside(transform_.position())) {
         die();
     }
+    motion_timer_ += delta_time;
+
 }
 
 void Bomboss::draw() const
 {
     glPushMatrix();
     glMultMatrixf(transform_.localToWorldMatrix());
-    //glScalef(7.0f, 7.0f, 7.0f);
+    gsBindSkeleton(Mesh_Enemy);
+    gsBindAnimation(Mesh_Enemy, 1, motion_timer_);
+    glScaled(100.0f,100.0f,100.0f);
     gsDrawMesh(Mesh_Enemy);
     glPopMatrix();
 }

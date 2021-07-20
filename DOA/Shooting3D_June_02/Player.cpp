@@ -8,6 +8,7 @@
 const float MovingRangeX = 100.0f;
 const float MovingRangeY = 70.0f;
 
+
 // コンストラクタ
 Player::Player(IWorld* world, const GSvector3& position) {
 	world_ = world;
@@ -20,7 +21,8 @@ Player::Player(IWorld* world, const GSvector3& position) {
 // 更新
 void Player::update(float delta_time) {
 	// 自機がｙ軸プラス方向を向くように回転させる
-	transform_.eulerAngles(-90.0f, 180.0f, 0.0f);
+	transform_.eulerAngles(90.0f, 180.0f, 0.0f);
+	float bullet = transform_.position().y + 40.0f;
 	// キーボードの入力から移動量を決める
 	GSvector3 inputVelocity{ 0.0f, 0.0f, 0.0f };
 	if (gsGetKeyState(GKEY_LEFT) == GS_TRUE) {
@@ -36,7 +38,7 @@ void Player::update(float delta_time) {
 		  inputVelocity.y = -1.0f;
 	  }*/
 	  // 移動量を計算
-	float speed = 1.0f;    // 移動スピード
+	float speed = 2.0f;    // 移動スピード
 	velocity_ = inputVelocity.normalized() * speed * delta_time;
 	// 座標を取得
 	GSvector3 position = transform_.position();
@@ -69,35 +71,43 @@ void Player::update(float delta_time) {
 		{ //カウントしておく
 
 
-			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
-			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
-			gsPlaySE(Se_WeaponPlayer);
-			if (timer_ >= 90) {
+			//world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+			//world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
+			//world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
+			//gsPlaySE(Se_WeaponPlayer);
+			//if (timer_ >= 90) {
 
-				new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f });
-				if (timer_ > 360) {
-					world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-					world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
-					world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f }));
-					if (timer_ > 360) {
-						timer_ = 0;
-						isItem = false;
-					}
-				}
-				else if (isItem == false)
-				{
-					world_->add_actor(
-						new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-					// ショット音を再生
-					gsPlaySE(Se_WeaponPlayer);
-				}
+			//	new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f });
+			//	if (timer_ > 360) {
+			//		world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+			//		world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
+			//		world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f }));
+			//		if (timer_ > 360) {
+			//			timer_ = 0;
+			//			isItem = false;
+			//		}
+			//	}
+			//	else if (isItem == false)
+			//	{
+			//		world_->add_actor(
+			//			new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+			//		// ショット音を再生
+			//		gsPlaySE(Se_WeaponPlayer);
+			//	}
+			//}
+
+
+			if (timer_ <= 360) {
+						world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+						world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
+						world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f }));
+						gsPlaySE(Se_WeaponPlayer);
 			}
-
-
-
-			timer_ = 0;
-			isItem = false;
+			else
+			{
+				timer_ = 0;
+				isItem = false;
+			}
 		}
 		else if (isItem == false)
 		{
@@ -133,6 +143,8 @@ void Player::react(Actor& other) {
 	// 敵と衝突した場合は死亡
 	if (other.tag() == "ItemTag") {
 		isItem = true;
+		gsPlaySE(Se_WeaponChange);
+		
 	}
 
 }

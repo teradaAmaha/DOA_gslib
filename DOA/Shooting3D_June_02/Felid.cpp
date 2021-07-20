@@ -31,7 +31,7 @@ void Field::draw() const {
 
     //const GSrect src_rect{ 0.0f, scroll_, 1280.0f, 720.0f + scroll_ };
 
-    gsDrawSprite2D(bg_, NULL, &src_rect, NULL, NULL, NULL, 0.0f);
+ //   gsDrawSprite2D(bg_, NULL, &src_rect, NULL, NULL, NULL, 0.0f);
 }
 
 // フィールド内か？

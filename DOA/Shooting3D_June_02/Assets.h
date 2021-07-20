@@ -18,7 +18,9 @@ enum
 	TextureTitleBG,
 	TextureTitleLogo,
 	TextureBase,
-	TextureNumber,       
+	TextureNumber,
+	Texture_BG,
+	Texture_BGo,
 
 	//3Dスプライト
 	Texture_EffectLazerCyan,
@@ -37,6 +39,7 @@ enum {
 	Se_ExplosionEnemy,
 	Se_ExplosionAsteroid,
 	Se_WeaponPlayer,
+	Se_WeaponPlayer1,
 	Se_WeaponEnemy,
 	Se_WeaponChange
 };

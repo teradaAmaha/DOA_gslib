@@ -37,6 +37,7 @@ void PlayerBullet::draw_transparent() const {
     static const GSrect size{ -5.0f, 5.0f, 5.0f, -5.0f };
     gsDrawSprite3D(Texture_EffectLazerOrange,
         &transform_.position(), &size, NULL, NULL, NULL, 0.0f);
+  
     glPopAttrib();
 }
 

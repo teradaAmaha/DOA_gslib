@@ -16,7 +16,7 @@ Asteroid::Asteroid(IWorld* world, const GSvector3& position, const GSvector3& ve
 // 更新
 void Asteroid::update(float delta_time) {
     // 回転させる
-    transform_.rotate(2.0f, 0.0f, 0.5f);
+    //transform_.rotate(2.0f, 0.0f, 0.5f);
     // 移動する（ワールド座標系を基準に移動）
 
     transform_.translate(velocity_ * delta_time, GStransform::Space::World);

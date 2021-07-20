@@ -19,10 +19,7 @@ void DamageAssets::update(float delta_time)
 
 void DamageAssets::draw() const
 {
-    glPushMatrix();
-    glMultMatrixf(transform_.localToWorldMatrix());
-    gsDrawMesh(Mesh_Asteroid01);
-    glPopMatrix();
+   
 }
 
 void DamageAssets::react(Actor& other)
