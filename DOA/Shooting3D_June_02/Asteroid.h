@@ -14,6 +14,8 @@ public:
     virtual void draw() const override;
     // Õ“Ëˆ—
     virtual void react(Actor& other) override;
+private:
+    float	motion_timer_{ 0.0f };
 };
 
 #endif

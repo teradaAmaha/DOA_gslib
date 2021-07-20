@@ -12,7 +12,7 @@ Bomboss::Bomboss(IWorld* world, const GSvector3& position)
     name_ = "Bomboss";
     tag_ = "EnemyTag";
     velocity_ = GSvector3{ 0.0f, -1.0f, 0.0f };
-    collider_ = BoundingSphere{ 5.0f };
+    collider_ = BoundingSphere{ 20.0f };
     moving_timer_ = gsRandf(0.0f, 60.0f);
     shooting_timer_ = gsRandf(0.0f, 60.0f);
     transform_.position(position);
@@ -20,17 +20,17 @@ Bomboss::Bomboss(IWorld* world, const GSvector3& position)
 
 void Bomboss::update(float delta_time)
 {
-    
+    transform_.eulerAngles(90.0f, 0.0f, 0.0f);
     //transform_.translate(velocity_ * delta_time, GStransform::Space::World);
 
     moving_timer_ -= delta_time;
 
-    if (moving_timer_ <= -250.0f && moving_timer_ > -450.0f)
+    if (moving_timer_ <= -150.0f && moving_timer_ > -400.0f)
     {
         velocity_.y = -0.0f;
-        transform_.eulerAngles(xR -= 10.0f, timer += 10.0f, 0.0f);
+        
     }
-    else if (moving_timer_ <= -450.0f)
+    else if (moving_timer_ <= -400.0f)
     {
         world_->add_actor(new BomExplosion{ world_, transform_.position() });
         die();
@@ -51,13 +51,15 @@ void Bomboss::update(float delta_time)
 
 }
 
+GLfloat red[] = { 0.8, 0.2, 0.2,1.0 };
 void Bomboss::draw() const
 {
     glPushMatrix();
     glMultMatrixf(transform_.localToWorldMatrix());
     gsBindSkeleton(Mesh_Enemy);
     gsBindAnimation(Mesh_Enemy, 1, motion_timer_);
-    glScaled(100.0f,100.0f,100.0f);
+   // glColor3d(1.0f, 0.0f, 0.0f);
+    glScaled(40.0f,60.0f,40.0f);
     gsDrawMesh(Mesh_Enemy);
     glPopMatrix();
 }
@@ -73,6 +75,7 @@ void Bomboss::react(Actor& other)
             world_->game_clear();
 
             die();
+            
         }
     }
 }

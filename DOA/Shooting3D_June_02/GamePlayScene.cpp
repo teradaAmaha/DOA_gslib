@@ -32,6 +32,7 @@ void GamePlayScene::start()
     gsLoadSE(Se_WeaponPlayer1, "Assets/Sound/nc30638.wav", 5, GWAVE_DEFAULT);
     gsLoadSE(Se_WeaponEnemy, "Assets/Sound/weapon_enemy.wav", 5, GWAVE_DEFAULT);
     gsLoadSE(Se_WeaponChange, "Assets/Sound/nc40282.wav", 5, GWAVE_DEFAULT);
+    gsLoadSE(Se_dieZombie, "Assets/Sound/gutya.wav", 5, GWAVE_DEFAULT);
 
     gsLoadMesh(Mesh_Player, "Assets/Model/gun.msh");
     gsLoadMesh(Mesh_Asteroid01, "Assets/Model/prop_asteroid_01.msh");

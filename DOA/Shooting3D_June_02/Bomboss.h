@@ -25,7 +25,7 @@ private:
 
     int asteroid{ 0 };
 
-    float life{ 10.0f };
+    float life{ 20.0f };
 
     float timer{ 0.0f };
 

@@ -21,6 +21,10 @@ enum
 	TextureNumber,
 	Texture_BG,
 	Texture_BGo,
+	Texture_BGc,
+	Texture_Gac,
+	Texture_Gao,
+
 
 	//3Dスプライト
 	Texture_EffectLazerCyan,
@@ -41,6 +45,7 @@ enum {
 	Se_WeaponPlayer,
 	Se_WeaponPlayer1,
 	Se_WeaponEnemy,
-	Se_WeaponChange
+	Se_WeaponChange,
+	Se_dieZombie,
 };
 #endif

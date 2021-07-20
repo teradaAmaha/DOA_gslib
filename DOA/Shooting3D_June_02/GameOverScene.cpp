@@ -8,6 +8,7 @@ void GameOverScene::start() {
 	is_end_ = false;
 	//gsLoadTexture(TextureNumber, "Assets/NUM.png");
 	gsLoadTexture(Texture_BGo, "Assets/2DSprite/gmo.png");
+	gsLoadTexture(Texture_Gao, "Assets/2DSprite/GameO.png");
 }
 
 void GameOverScene::update(float delta_time)
@@ -23,6 +24,7 @@ void GameOverScene::draw() const {
 	//static const NumberTexture number{ TextureNumber, 16, 16 };
 	//number.draw(GSvector2{ 520, 0 }, score_, 7);
 	gsDrawSprite2D(Texture_BGo, NULL, NULL, NULL, NULL, NULL, 0.0f);
+	gsDrawSprite2D(Texture_Gao, &GSvector2{280.0f,200.0f}, NULL, NULL, NULL, &GSvector2{ 0.3f,0.3f }, 0.0f);
 
 }
 

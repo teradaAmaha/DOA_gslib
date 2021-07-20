@@ -16,6 +16,7 @@ public:
     virtual void react(Actor& other) override;
 
 private:
+
     bool isItem = false;
     int timer_ = 0;
     float angle_1 = 0.01;
