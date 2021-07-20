@@ -1,9 +1,9 @@
 diff a/DOA/Shooting3D_June_02/Player.cpp b/DOA/Shooting3D_June_02/Player.cpp	(rejected hunks)
-@@ -50,6 +50,7 @@
- 	// ���W�̐ݒ�
- 	transform_.position(position);
+@@ -23,6 +23,7 @@
+ // �X�V
+ void Player::update(float delta_time) {
  
 +<<<<<<< HEAD
- 
- 		if (isItem == true)
- 		{ //�J�E���g���Ă���
+ 	
+ 	transform_.eulerAngles(90.0f, 140.0f, 0.0f);
+ 	

@@ -17,15 +17,21 @@ Player::Player(IWorld* world, const GSvector3& position) {
 	transform_.position(position);
 	collider_ = BoundingSphere{ 5.0f };
 	// 自機がｙ軸プラス方向を向くように回転させる
-	transform_.eulerAngles(-90.0f, 180.0f, 0.0f);
+	transform_.eulerAngles(90.0f, 180.0f, 0.0f);
 }
 
 // 更新
 void Player::update(float delta_time) {
 
+<<<<<<< HEAD
 	
 	transform_.eulerAngles(90.0f, 140.0f, 0.0f);
 	
+=======
+	// 自機がｙ軸プラス方向を向くように回転させる
+	//transform_.eulerAngles(90.0f, 180.0f, 0.0f);
+	float bullet = transform_.position().y + 40.0f;
+>>>>>>> origin/master
 
 	// キーボードの入力から移動量を決める
 	GSvector3 inputVelocity{ 0.0f, 0.0f, 0.0f };
@@ -49,6 +55,7 @@ void Player::update(float delta_time) {
 	transform_.position(position);
 
 
+<<<<<<< HEAD
 
 	//if (isItem == true)
 	//{ //カウントしておく
@@ -72,6 +79,8 @@ void Player::update(float delta_time) {
 	//	 ショット音を再生
 	//	gsPlaySE(Se_WeaponPlayer);
 	//}
+=======
+>>>>>>> origin/master
 	//状態
 	switch (state_)
 	{
@@ -110,10 +119,15 @@ void Player::react(Actor& other) {
 	}
 	if (other.tag() == "ItemTag") {
 
+<<<<<<< HEAD
 		isItem = true;
 		gsPlaySE(Se_WeaponChange);
 
 
+=======
+		gsPlaySE(Se_WeaponChange);
+
+>>>>>>> origin/master
 		state_ = State::get_item_;
 
 	}
