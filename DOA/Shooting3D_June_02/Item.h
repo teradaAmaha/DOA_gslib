@@ -7,7 +7,7 @@
 class Item : public Actor {
 public:
     // コンストラクタ
-    Item(IWorld* world, const GSvector3& position, const GSvector3& velocity);
+    Item(IWorld* world, const GSvector3& position);
     // 更新
     virtual void update(float delta_time) override;
     // 描画

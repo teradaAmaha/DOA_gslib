@@ -7,12 +7,12 @@
 
 
 // コンストラクタ
-Item::Item(IWorld* world, const GSvector3& position,const GSvector3& velocity) {
+Item::Item(IWorld* world, const GSvector3& position) {
     world_ = world;
     name_ = "Item";
     tag_ = "ItemTag";
+    velocity_ = GSvector3{ 0.0f, -1.0f, 0.0f };
     transform_.position(position);
-    velocity_ = velocity;
     collider_ = BoundingSphere{ 25.0f };
 }
 
@@ -20,7 +20,7 @@ Item::Item(IWorld* world, const GSvector3& position,const GSvector3& velocity) {
 void Item::update(float delta_time) {
     // アイテムがｙ軸プラス方向を向くように回転させる
     transform_.eulerAngles(-180.0f, 180.0f, 0.0f);
-    // 移動する（ワールド座標系を基準に移動）
+    // 移動する（ワールド座標系基準）
     transform_.translate(velocity_ * delta_time, GStransform::Space::World);
     
     //GSvector3 position = transform_.position();

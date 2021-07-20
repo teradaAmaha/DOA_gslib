@@ -15,12 +15,13 @@ Player::Player(IWorld* world, const GSvector3& position) {
 	tag_ = "PlayerTag";
 	transform_.position(position);
 	collider_ = BoundingSphere{ 5.0f };
+	// 自機がｙ軸プラス方向を向くように回転させる
+	transform_.eulerAngles(-90.0f, 180.0f, 0.0f);
 }
 
 // 更新
 void Player::update(float delta_time) {
-	// 自機がｙ軸プラス方向を向くように回転させる
-	transform_.eulerAngles(-90.0f, 180.0f, 0.0f);
+	
 	// キーボードの入力から移動量を決める
 	GSvector3 inputVelocity{ 0.0f, 0.0f, 0.0f };
 	if (gsGetKeyState(GKEY_LEFT) == GS_TRUE) {
@@ -29,12 +30,6 @@ void Player::update(float delta_time) {
 	if (gsGetKeyState(GKEY_RIGHT) == GS_TRUE) {
 		inputVelocity.x = 1.0f;
 	}
-	/*  if (gsGetKeyState(GKEY_UP) == GS_TRUE) {
-		  inputVelocity.y = 1.0f;
-	  }
-	  if (gsGetKeyState(GKEY_DOWN) == GS_TRUE) {
-		  inputVelocity.y = -1.0f;
-	  }*/
 	  // 移動量を計算
 	float speed = 1.0f;    // 移動スピード
 	velocity_ = inputVelocity.normalized() * speed * delta_time;
@@ -47,67 +42,18 @@ void Player::update(float delta_time) {
 	position.y = CLAMP(position.y, -MovingRangeY, MovingRangeY);
 	// 座標の設定
 	transform_.position(position);
-	angle_1 += 0.001;
-	angle_2 -= 0.001;
-	if (isItem == true)
+
+	//状態
+	switch (state_)
 	{
-		timer_++;
-	}
-
-
-	if (isItem == true)
-	{//カウントしておく
-		timer_++;
-	}
-
-
-	//自機発射
-	if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
-
-
-		if (isItem == true)
-		{ //カウントしておく
-
-
-			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
-			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 8.0f, 0.0f }));
-			gsPlaySE(Se_WeaponPlayer);
-			if (timer_ >= 90) {
-
-				new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f });
-				if (timer_ > 360) {
-					world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-					world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
-					world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f }));
-					if (timer_ > 360) {
-						timer_ = 0;
-						isItem = false;
-					}
-				}
-				else if (isItem == false)
-				{
-					world_->add_actor(
-						new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-					// ショット音を再生
-					gsPlaySE(Se_WeaponPlayer);
-				}
-			}
-
-
-
-			timer_ = 0;
-			isItem = false;
-		}
-		else if (isItem == false)
-		{
-			world_->add_actor(
-				new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
-			// ショット音を再生
-			gsPlaySE(Se_WeaponPlayer);
-		}
-	}
+	case Player::State::nomal:
+		nomal_state_(delta_time);
+		break;
+	case Player::State::get_item_:
+		get_item_state_(delta_time);
+		break;
 	
+	}
 
 }
 		
@@ -130,10 +76,49 @@ void Player::react(Actor& other) {
 		gsPlaySE(Se_ExplosionPlayer);
 		isItem = false;
 	}
-	// 敵と衝突した場合は死亡
 	if (other.tag() == "ItemTag") {
-		isItem = true;
+		state_ = State::get_item_;
 	}
 
 }
 
+//通常状態
+void Player::nomal_state_(float delta_time)
+{
+	
+	if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
+		world_->add_actor(
+			new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+		// ショット音を再生
+		gsPlaySE(Se_WeaponPlayer);
+	}
+}
+
+void Player::get_item_state_(float delta_time)
+{
+	//タイマー
+
+	timer_++;
+
+	//角度
+	angle_1 += 0.001;
+	angle_2 -= 0.001;
+
+	if (gsGetKeyTrigger(GKEY_Z) == GS_TRUE) {
+
+		new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f });
+		if (timer_ < 360)
+		{
+			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f, 4.0f, 0.0f }));
+			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_2, 4.0f, 0.0f }));
+			world_->add_actor(new PlayerBullet(world_, transform_.position(), GSvector3{ 0.0f + angle_1, 4.0f, 0.0f }));
+			// ショット音を再生
+			gsPlaySE(Se_WeaponPlayer);
+
+		}
+		else if (timer_ > 360) {
+			state_ = State::nomal;
+			timer_ = 0;
+		}
+	}
+}
