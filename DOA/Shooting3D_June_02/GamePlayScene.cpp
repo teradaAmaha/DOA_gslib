@@ -62,8 +62,7 @@ void GamePlayScene::start()
     // プレーヤの追加
     world_.add_actor(new Player{ &world_, GSvector3{ 0.0f, -50.0f, 0.0f } });
     //アイテム
-    world_.add_actor(new Item{ &world_, GSvector3{ 0.0f, 100.0f, 0.0f }
-         ,GSvector3{0.0f, -1.0f, 0.0f} });
+    world_.add_actor(new Item{ &world_ ,GSvector3{10.0f,0.0f,0.0f} });
     // 敵生成クラスの追加
     world_.add_actor(new EnemyGenerator{ &world_, "Stage01.csv" });
 

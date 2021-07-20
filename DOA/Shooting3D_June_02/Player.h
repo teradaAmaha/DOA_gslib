@@ -20,6 +20,21 @@ private:
     int timer_ = 0;
     float angle_1 = 0.01;
     float angle_2 = -0.01;
+
+private:
+    enum class State
+    {
+        nomal,
+        get_item_,
+
+    };
+
+    void nomal_state_(float delta_time);//’Êíó‘Ô
+    void get_item_state_(float delta_time);//ƒAƒCƒeƒ€“üè
+    //‰Šúó‘Ô
+    State state_{ State::nomal };
+
+
 };
 
 
